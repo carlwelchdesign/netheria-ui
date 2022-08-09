@@ -1,5 +1,6 @@
-import grey from '@mui/material/colors/grey'
 import { createTheme } from '@mui/material/styles'
+import { styled, Typography } from '@mui/material'
+import { grey, blue } from '@mui/material/colors'
 
 export const theme = createTheme({
   typography: {
@@ -131,3 +132,43 @@ export const theme = createTheme({
   }
 })
 
+export const TableHeadText = styled(Typography)(
+  () => ({
+    fontSize: '10px',
+    color: blue[500],
+    fontWeight: 500
+  }),
+)
+
+export const addButtonStyle = {
+  marginTop: '55px',
+  width: '60px',
+  textTransform: 'none'
+}
+
+export const totalRunDetailStyle = {
+  fontStyle: 'normal',
+  color: '#4DB296',
+  fontWeight: 500,
+  fontSize: '32px',
+  textAlign: 'right',
+  marginBottom: '24px'
+}
+
+export const modalStyle = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  minWidth: '400px',
+  minHeight: '400px',
+  maxHeight: '600px',
+  maxWidth: '70%',
+  bgcolor: 'background.paper',
+  borderRadius: '8px',
+  overflowY: 'scroll',
+  boxShadow: 24,
+  pt: 2,
+  px: 6,
+  pb: 3,
+};

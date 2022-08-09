@@ -1,8 +1,10 @@
 import React, { ChangeEvent } from 'react'
 import { TableRow, TableCell, Select, MenuItem, IconButton, SelectChangeEvent, Paper, Table, TableBody, TableContainer, TableHead, styled, Typography } from '@mui/material'
-import { Providers, TargetTableTypes, instances } from '../App'
+import { instances } from '../../constants'
+import {  Providers, TargetTableTypes } from '../../constants/types'
 import ClearIcon from '@mui/icons-material/Clear'
-import { blue, grey } from '@mui/material/colors'
+import { grey } from '@mui/material/colors'
+import { TableHeadText } from '../../styles/theme'
 
 type Props = {
   rowsData: TargetTableTypes[],
@@ -10,28 +12,23 @@ type Props = {
   handleChange: (index: number, e: SelectChangeEvent | ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
 
-
-
-const TableHeadText = styled(Typography)(
+export const TableCellHeader = styled(TableCell)(
   () => ({
-    fontSize: '10px',
-    color: blue[500],
-    fontWeight: 500
+    paddingBottom: '10px'
   }),
 )
 
 const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
-
   return (
     <TableContainer component={Paper} sx={{ boxShadow: 'none', borderBottom: 'none' }}>
       <Table aria-label="caption table">
         <TableHead>
           <TableRow>
-            <TableCell sx={{ paddingBottom: '10px' }} width="35%"><TableHeadText>PROVIDER</TableHeadText></TableCell>
-            <TableCell sx={{ paddingBottom: '10px' }} width="35%"><TableHeadText>INSTANCE</TableHeadText></TableCell>
-            <TableCell sx={{ paddingBottom: '10px' }} width="15%"><TableHeadText>VCPU</TableHeadText></TableCell>
-            <TableCell sx={{ paddingBottom: '10px' }} width="15%"><TableHeadText>MEMORY (GIB)</TableHeadText></TableCell>
-            <TableCell sx={{ paddingBottom: '10px' }} width="15%"><TableHeadText></TableHeadText></TableCell>
+            <TableCellHeader width="35%"><TableHeadText>PROVIDER</TableHeadText></TableCellHeader>
+            <TableCellHeader width="35%"><TableHeadText>INSTANCE</TableHeadText></TableCellHeader>
+            <TableCellHeader width="15%"><TableHeadText>VCPU</TableHeadText></TableCellHeader>
+            <TableCellHeader width="15%"><TableHeadText>MEMORY (GIB)</TableHeadText></TableCellHeader>
+            <TableCellHeader width="15%"><TableHeadText></TableHeadText></TableCellHeader>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -48,7 +45,10 @@ const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
                     return selected
                   }}
                   inputProps={{ 'aria-label': 'Without label' }}
-                  onChange={(e) => (handleChange(index, e))}
+                  onChange={(e) => {
+                    data.provider = ''
+                    return handleChange(index, e)
+                  }}
                   value={data.provider}
                   placeholder="Placeholder"
                   defaultValue={''}

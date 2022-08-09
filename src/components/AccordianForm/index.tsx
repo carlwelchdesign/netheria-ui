@@ -3,14 +3,7 @@ import styled from '@emotion/styled'
 import { Accordion, AccordionSummary, Typography, AccordionDetails, Checkbox, Box } from '@mui/material'
 import { grey } from '@mui/material/colors'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-
-export type AccordianProps = {
-  title: string
-  detail: string
-  checked: boolean
-  handleCheckBoxChange: () => void
-  optionsTable?: unknown
-}
+import { AccordianProps } from '../../constants'
 
 const CustomAccordian = styled(Accordion)(
   () => ({
@@ -18,7 +11,7 @@ const CustomAccordian = styled(Accordion)(
   }),
 )
 
-const OctoMLAccordian = ({ data }: { data: AccordianProps[] }) => {
+const AccordianForm = ({ data }: { data: AccordianProps[] }) => {
 
   return (
     <>
@@ -69,4 +62,4 @@ const OctoMLAccordian = ({ data }: { data: AccordianProps[] }) => {
   )
 }
 
-export default OctoMLAccordian
+export default AccordianForm
