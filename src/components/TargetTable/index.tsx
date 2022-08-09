@@ -21,7 +21,7 @@ export const TableCellHeader = styled(TableCell)(
 const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
   return (
     <TableContainer component={Paper} sx={{ boxShadow: 'none', borderBottom: 'none' }}>
-      <Table aria-label="caption table">
+      <Table aria-label="hardware-target-table">
         <TableHead>
           <TableRow>
             <TableCellHeader width="35%"><TableHeadText>PROVIDER</TableHeadText></TableCellHeader>

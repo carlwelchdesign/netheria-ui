@@ -11,10 +11,10 @@ import { TargetTableTypes, OctomizeDataTypes } from '../../constants/types'
 import { addButtonStyle } from '../../styles/theme'
 import { FieldValues, useForm } from 'react-hook-form'
 import TargetTable from '../TargetTable'
-import { uniq } from 'lodash'
 import { instances, rowsInputDefault, getAccordianData } from '../../constants'
 import MessageModal from '../MessageModal'
 import OctomizePanel from '../OctomizePanel'
+import { checkForDuplicates } from '../../utils'
 
 const App = () => {
   const { register, handleSubmit, watch, } = useForm();
@@ -71,16 +71,6 @@ const App = () => {
       vcpu: cpu,
       memory
     }
-  }
-
-  const checkForDuplicates = (data: TargetTableTypes[]) => {
-    const dataCopy = [...data];
-    Object.keys(dataCopy).forEach((key: string) => {
-      // @ts-ignore: key type error - figure it out later
-      dataCopy[key] = JSON.stringify(dataCopy[key]);
-    });
-    const dataHasDuplicates = uniq(dataCopy).length != dataCopy.length;
-    return dataHasDuplicates
   }
 
   const handleChange = (index: number, e: { target: { name: string; value: string } }) => {
