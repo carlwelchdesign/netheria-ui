@@ -14,7 +14,7 @@ User can select Accelerate options in the dropdown accordian. Octomize panel lis
 
 ## Benchmark
 
-User can update Benchmark options. Calulations in the Octomize feedback panel are affected by the hardware instance selections and trial options.
+User can update Benchmark options. Calculations in the Octomize feedback panel list items are affected by the hardware instance selections and trial options.
 
 ![benchmark](https://user-images.githubusercontent.com/2073707/183808877-19afce6e-5322-41cc-9c01-b556ddabda20.gif)
 
