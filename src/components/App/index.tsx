@@ -142,7 +142,7 @@ const App = () => {
                         </Typography>
                       </Grid>
                       <Grid item xs={1} sx={{ display: 'flex' }}>
-                        <Button sx={addButtonStyle} variant="contained" disabled={isAddButtonDisabled} onClick={addTableRows}>Add</Button>
+                        <Button name={'add-target'} sx={addButtonStyle} variant="contained" disabled={isAddButtonDisabled} onClick={addTableRows}>Add</Button>
                       </Grid>
                     </Grid>
                   </Box>
@@ -150,7 +150,7 @@ const App = () => {
                 </MainPanel>
               </Grid>
               <Grid item xs={3}>
-                <OctomizePanel {...{ totalRuns, targetRowData, benchmarkChecked, runsPerTrial, numTrials, isOctomizeDisabled: isOctomizeDisabled(), watch }} />
+                <OctomizePanel {...{ totalRuns, targetRowData, benchmarkChecked, runsPerTrial, numTrials, isOctomizeDisabled: isOctomizeDisabled(), watch, isAccelerateComplete: isAccelerateComplete }} />
               </Grid>
             </Grid>
           </Container>

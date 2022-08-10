@@ -101,7 +101,7 @@ export const getAccordianData = ({setBenchmarkChecked, setAccelerateChecked, ben
                 <TextField
                   type="number"
                   disabled={!watch('benchmarkHardware')}
-                  InputProps={{ inputProps: { min: 1, max: 32 } }}
+                  InputProps={{ inputProps: { min: 1, max: 16 } }}
                   {...register('num_trials')}
                   defaultValue={1}
                 />
@@ -110,7 +110,7 @@ export const getAccordianData = ({setBenchmarkChecked, setAccelerateChecked, ben
                 <TextField
                   type="number"
                   disabled={!watch('benchmarkHardware')}
-                  InputProps={{ inputProps: { min: 1, max: 32 } }}
+                  InputProps={{ inputProps: { min: 1, max: 16 } }}
                   {...register('runs_per_trial')}
                   defaultValue={1}
                 />
