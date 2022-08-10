@@ -25,7 +25,7 @@ export const rowsInputDefault: TargetTableTypes = {
   memory: 0
 }
 
-export const getAccordianData = ({setBenchmarkChecked, setAccelerateChecked, benchmarkChecked, accelerateChecked, register, watch}: AccordianDataProps) => {
+export const getAccordianForms = ({setBenchmarkChecked, setAccelerateChecked, benchmarkChecked, accelerateChecked, register, watch}: AccordianDataProps) => {
   return [
   {
     title: 'Benchmark',

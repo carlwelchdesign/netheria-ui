@@ -10,7 +10,7 @@ import { TargetTableTypes, OctomizeDataTypes } from '../../constants/types'
 import { addButtonStyle } from '../../styles/theme'
 import { FieldValues, useForm } from 'react-hook-form'
 import TargetTable from '../TargetTable'
-import { instances, rowsInputDefault, getAccordianData } from '../../constants'
+import { instances, rowsInputDefault, getAccordianForms } from '../../constants'
 import MessageModal from '../MessageModal'
 import OctomizePanel from '../OctomizePanel'
 import { checkForDuplicates } from '../../utils'
@@ -133,7 +133,7 @@ const App = () => {
                     <Typography sx={{ color: grey[500], marginBottom: '22px' }} variant='h3'>
                       Octomize
                     </Typography>
-                    <AccordianForm data={getAccordianData({ setBenchmarkChecked, setAccelerateChecked, benchmarkChecked, accelerateChecked, register, watch })} />
+                    <AccordianForm data={getAccordianForms({ setBenchmarkChecked, setAccelerateChecked, benchmarkChecked, accelerateChecked, register, watch })} />
                     <Grid container spacing={0}>
                       <Grid item xs={11} sx={{ paddingLeft: '0 !important' }}>
                         <Typography sx={{ marginTop: '60px', color: grey[500] }} variant='body1'>
