@@ -167,3 +167,16 @@ export const modalStyle = {
   px: 6,
   pb: 3,
 }
+
+export const Drawer = styled(MuiDrawer)(() => ({
+  width: 64,
+  flexShrink: 0,
+  whiteSpace: 'nowrap',
+  boxSizing: 'border-box',
+}))
+
+export const UserAvatar = styled(Avatar)(() => ({
+  position: 'absolute',
+  bottom: '14px',
+  left: '11px',
+}))
