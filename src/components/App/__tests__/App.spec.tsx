@@ -29,6 +29,8 @@ describe('App Component', () => {
     screen.getByText('AWS')
     screen.getByText('GCP')
     screen.getByText('AZURE')
+    // the Add button is disabled
+    // expect(screen.getByRole('button', { name: 'Add' })).toBeDisabled()
     // When I select a provider option
     await waitFor(() => UserEvent.click(screen.getByText('AWS')))
     // I can see and select an Instance
@@ -43,5 +45,8 @@ describe('App Component', () => {
     expect(screen.getAllByText(instances[0].name).length).toBe(3)
     screen.getByText('2 cores')
     screen.getAllByText('1')
+    // and I can add another row
+    UserEvent.click(screen.getByRole('button', { name: 'Add' }))
+    screen.debug()
   })
 })

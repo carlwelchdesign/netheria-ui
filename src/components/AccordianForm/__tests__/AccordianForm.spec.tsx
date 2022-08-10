@@ -1,7 +1,7 @@
-import { screen } from '@testing-library/react'
+import { } from '@testing-library/react'
 
 describe('AccordianForm', () => {
   it('renders AccordianForm', () => {
-    screen.debug()
+    expect(document.querySelector('body')).toBeInTheDocument()
   })
 })
