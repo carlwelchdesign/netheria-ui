@@ -7,7 +7,7 @@ type Props = {
   details: string
 }
 
-const ModelTitleDetails = ({title, details}: Props) => (
+const ModelTitleDetails = ({ title, details }: Props) => (
   <Box sx={{ margin: '80px 0 48px' }}>
     <Typography sx={{ fontSize: '36px', color: grey[700], fontWeight: 300 }} variant='h2'>
       {title}

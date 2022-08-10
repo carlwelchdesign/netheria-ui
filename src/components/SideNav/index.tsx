@@ -10,27 +10,27 @@ import EqualizerIcon from '@mui/icons-material/Equalizer'
 import { Avatar } from '@mui/material'
 import OctoMlLogo from '../../assets/svg/logo'
 
-const Drawer = styled(MuiDrawer)(
-  () => ({
-    width: 64,
-    flexShrink: 0,
-    whiteSpace: 'nowrap',
-    boxSizing: 'border-box',
-  }),
-)
+const Drawer = styled(MuiDrawer)(() => ({
+  width: 64,
+  flexShrink: 0,
+  whiteSpace: 'nowrap',
+  boxSizing: 'border-box',
+}))
 
-const UserAvatar = styled(Avatar)(
-  () => ({
-    position: 'absolute',
-    bottom: '14px',
-    left: '11px'
-  }),
-)
+const UserAvatar = styled(Avatar)(() => ({
+  position: 'absolute',
+  bottom: '14px',
+  left: '11px',
+}))
 
 const SideNav = () => (
-  <Drawer variant="permanent" PaperProps={{ elevation: 6 }}>
+  <Drawer variant='permanent' PaperProps={{ elevation: 6 }}>
     <List>
-      {[<OctoMlLogo key="logo" />, <HomeIcon key="home" />, <EqualizerIcon key="benchmarks" style={{ transform: 'scaleX(-1)' }} />].map((icon, index) => (
+      {[
+        <OctoMlLogo key='logo' />,
+        <HomeIcon key='home' />,
+        <EqualizerIcon key='benchmarks' style={{ transform: 'scaleX(-1)' }} />,
+      ].map((icon, index) => (
         <ListItem key={index} disablePadding sx={{ display: 'block', marginBottom: '62px' }}>
           <ListItemButton
             sx={{
@@ -51,9 +51,8 @@ const SideNav = () => (
           </ListItemButton>
         </ListItem>
       ))}
-
     </List>
-    <UserAvatar alt="Jane Doe" src={require('../../assets/avatars/anon.png')} />
+    <UserAvatar alt='Jane Doe' src={require('../../assets/avatars/anon.png')} />
   </Drawer>
 )
 

@@ -6,14 +6,11 @@ import './styles/index.css'
 import { ThemeProvider } from '@mui/material/styles'
 import { theme } from './styles/theme'
 
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-)
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <Router>
     <ThemeProvider theme={theme}>
       <App />
     </ThemeProvider>
-  </Router>
+  </Router>,
 )

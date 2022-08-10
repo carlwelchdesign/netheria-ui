@@ -6,13 +6,13 @@ const mockDataNoDuplicates = [
     provider: Providers.AWS,
     instance: 'm4.4xlarge',
     vcpu: 16,
-    memory: 64
+    memory: 64,
   },
   {
     provider: Providers.GCP,
     instance: 'n2-standard-8',
     vcpu: 8,
-    memory: 32
+    memory: 32,
   },
 ]
 const mockDataWithDuplicates = [
@@ -20,19 +20,19 @@ const mockDataWithDuplicates = [
     provider: Providers.AWS,
     instance: 'm4.4xlarge',
     vcpu: 16,
-    memory: 64
+    memory: 64,
   },
   {
     provider: Providers.AWS,
     instance: 'm4.4xlarge',
     vcpu: 16,
-    memory: 64
+    memory: 64,
   },
   {
     provider: Providers.GCP,
     instance: 'n2-standard-8',
     vcpu: 8,
-    memory: 32
+    memory: 32,
   },
 ]
 

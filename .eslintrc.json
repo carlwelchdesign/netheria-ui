@@ -44,6 +44,12 @@
     "settings": {
         "import/resolver": {
             "typescript": {}
-        }
+        },
+        "react": {
+            "createClass": "createReactClass",             
+            "pragma": "React",  
+            "fragment": "Fragment",  
+            "version": "detect"
+         }
     }
 }

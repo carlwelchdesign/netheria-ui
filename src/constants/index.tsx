@@ -1,5 +1,16 @@
 import React from 'react'
-import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, Select, MenuItem, TextField } from '@mui/material'
+import {
+  TableContainer,
+  Paper,
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+  Select,
+  MenuItem,
+  TextField,
+} from '@mui/material'
 import { AccordianDataProps, Engine, Providers, TargetTableTypes } from './types'
 import { TableHeadText } from '../styles/theme'
 
@@ -22,33 +33,50 @@ export const rowsInputDefault: TargetTableTypes = {
   provider: '',
   instance: '',
   vcpu: 0,
-  memory: 0
+  memory: 0,
 }
 
-export const getAccordianForms = ({ setBenchmarkChecked, setAccelerateChecked, benchmarkChecked, accelerateChecked, register, watch }: AccordianDataProps) => {
+export const getAccordianForms = ({
+  setBenchmarkChecked,
+  setAccelerateChecked,
+  benchmarkChecked,
+  accelerateChecked,
+  register,
+  watch,
+}: AccordianDataProps) => {
   return [
     {
       title: 'Benchmark',
-      detail: 'Benchmarks are designed to measure the performance and accuracy of embedded inference. This allows organizations to develop plans on making improvements or adapting specific best practices, usually to increase some aspect of performance.',
+      detail:
+        'Benchmarks are designed to measure the performance and accuracy of embedded inference. This allows organizations to develop plans on making improvements or adapting specific best practices, usually to increase some aspect of performance.',
       handleCheckBoxChange: () => {
         setBenchmarkChecked(!benchmarkChecked)
       },
       checked: benchmarkChecked,
       optionsTable: (
         <TableContainer component={Paper}>
-          <Table aria-label="caption table">
+          <Table aria-label='caption table'>
             <TableHead>
               <TableRow>
-                <TableCell sx={{ paddingBottom: '10px' }} width="35%"><TableHeadText>ENGINE</TableHeadText></TableCell>
-                <TableCell sx={{ paddingBottom: '10px' }} width="35%"><TableHeadText>HARDWARE</TableHeadText></TableCell>
-                <TableCell sx={{ paddingBottom: '10px' }} width="15%"><TableHeadText>NUM TRIALS</TableHeadText></TableCell>
-                <TableCell sx={{ paddingBottom: '10px' }} width="15%"><TableHeadText>RUNS PER TRIAL</TableHeadText></TableCell>
+                <TableCell sx={{ paddingBottom: '10px' }} width='35%'>
+                  <TableHeadText>ENGINE</TableHeadText>
+                </TableCell>
+                <TableCell sx={{ paddingBottom: '10px' }} width='35%'>
+                  <TableHeadText>HARDWARE</TableHeadText>
+                </TableCell>
+                <TableCell sx={{ paddingBottom: '10px' }} width='15%'>
+                  <TableHeadText>NUM TRIALS</TableHeadText>
+                </TableCell>
+                <TableCell sx={{ paddingBottom: '10px' }} width='15%'>
+                  <TableHeadText>RUNS PER TRIAL</TableHeadText>
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
                 <TableCell>
-                  <Select sx={{ minWidth: '100%' }}
+                  <Select
+                    sx={{ minWidth: '100%' }}
                     displayEmpty
                     renderValue={(selected) => {
                       if (selected.length === 0) {
@@ -60,11 +88,16 @@ export const getAccordianForms = ({ setBenchmarkChecked, setAccelerateChecked, b
                     defaultValue={''}
                     {...register('benchmarkEngine')}
                   >
-                    {Object.keys(Engine).map(key => <MenuItem key={key} value={key}>{key}</MenuItem>)}
+                    {Object.keys(Engine).map((key) => (
+                      <MenuItem key={key} value={key}>
+                        {key}
+                      </MenuItem>
+                    ))}
                   </Select>
                 </TableCell>
                 <TableCell>
-                  <Select sx={{ minWidth: '100%' }}
+                  <Select
+                    sx={{ minWidth: '100%' }}
                     displayEmpty
                     renderValue={(selected) => {
                       if (selected.length === 0) {
@@ -77,12 +110,16 @@ export const getAccordianForms = ({ setBenchmarkChecked, setAccelerateChecked, b
                     defaultValue={''}
                     {...register('benchmarkHardware')}
                   >
-                    {Object.keys(Providers).map(key => <MenuItem key={key} value={key}>{key}</MenuItem>)}
+                    {Object.keys(Providers).map((key) => (
+                      <MenuItem key={key} value={key}>
+                        {key}
+                      </MenuItem>
+                    ))}
                   </Select>
                 </TableCell>
                 <TableCell>
                   <TextField
-                    type="number"
+                    type='number'
                     disabled={!watch('benchmarkHardware')}
                     InputProps={{ inputProps: { min: 1, max: 16 } }}
                     {...register('num_trials')}
@@ -91,7 +128,7 @@ export const getAccordianForms = ({ setBenchmarkChecked, setAccelerateChecked, b
                 </TableCell>
                 <TableCell>
                   <TextField
-                    type="number"
+                    type='number'
                     disabled={!watch('benchmarkHardware')}
                     InputProps={{ inputProps: { min: 1, max: 16 } }}
                     {...register('runs_per_trial')}
@@ -102,28 +139,34 @@ export const getAccordianForms = ({ setBenchmarkChecked, setAccelerateChecked, b
             </TableBody>
           </Table>
         </TableContainer>
-      )
+      ),
     },
     {
       title: 'Accelerate',
-      detail: 'An AI accelerator is a high-performance parallel computation machine that is specifically designed for the efficient processing of AI workloads like neural networks.',
+      detail:
+        'An AI accelerator is a high-performance parallel computation machine that is specifically designed for the efficient processing of AI workloads like neural networks.',
       handleCheckBoxChange: () => {
         setAccelerateChecked(!accelerateChecked)
       },
       checked: accelerateChecked,
       optionsTable: (
         <TableContainer component={Paper}>
-          <Table aria-label="caption table">
+          <Table aria-label='caption table'>
             <TableHead>
               <TableRow>
-                <TableCell sx={{ paddingBottom: '10px' }} width="50%"><TableHeadText>ENGINE</TableHeadText></TableCell>
-                <TableCell sx={{ paddingBottom: '10px' }} width="50%"><TableHeadText>HARDWARE</TableHeadText></TableCell>
+                <TableCell sx={{ paddingBottom: '10px' }} width='50%'>
+                  <TableHeadText>ENGINE</TableHeadText>
+                </TableCell>
+                <TableCell sx={{ paddingBottom: '10px' }} width='50%'>
+                  <TableHeadText>HARDWARE</TableHeadText>
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
                 <TableCell>
-                  <Select sx={{ minWidth: '100%' }}
+                  <Select
+                    sx={{ minWidth: '100%' }}
                     displayEmpty
                     renderValue={(selected) => {
                       if (selected.length === 0) {
@@ -135,11 +178,16 @@ export const getAccordianForms = ({ setBenchmarkChecked, setAccelerateChecked, b
                     defaultValue={''}
                     {...register('accelerateEngine')}
                   >
-                    {Object.keys(Engine).map(key => <MenuItem key={key} value={key}>{key}</MenuItem>)}
+                    {Object.keys(Engine).map((key) => (
+                      <MenuItem key={key} value={key}>
+                        {key}
+                      </MenuItem>
+                    ))}
                   </Select>
                 </TableCell>
                 <TableCell>
-                  <Select sx={{ minWidth: '100%' }}
+                  <Select
+                    sx={{ minWidth: '100%' }}
                     displayEmpty
                     renderValue={(selected) => {
                       if (selected.length === 0) {
@@ -152,7 +200,11 @@ export const getAccordianForms = ({ setBenchmarkChecked, setAccelerateChecked, b
                     defaultValue={''}
                     {...register('accelerateHardware')}
                   >
-                    {Object.keys(Providers).map(key => <MenuItem key={key} value={key}>{key}</MenuItem>)}
+                    {Object.keys(Providers).map((key) => (
+                      <MenuItem key={key} value={key}>
+                        {key}
+                      </MenuItem>
+                    ))}
                   </Select>
                 </TableCell>
               </TableRow>

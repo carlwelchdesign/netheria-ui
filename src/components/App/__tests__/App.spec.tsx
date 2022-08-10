@@ -9,13 +9,13 @@ describe('App Component', () => {
     await waitFor(() => render(<App />))
     screen.getByText('Shufflenet-v2.onnx')
     const OctomizeText = screen.queryAllByText(/Octomize/i)
-    expect(OctomizeText.length).toBe(2);
+    expect(OctomizeText.length).toBe(2)
     // I can see the accordians
     screen.getByText('Benchmark')
     screen.getByText('Accelerate')
     // I can see the hardware Target table
     screen.getByText('Hardware targets')
-    screen.getByLabelText('hardware-target-table')    
+    screen.getByLabelText('hardware-target-table')
     // Can see the Octomize panel
     screen.getByText('Total Runs')
   })
