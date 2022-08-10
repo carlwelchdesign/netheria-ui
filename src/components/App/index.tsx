@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { Button, Container, Grid } from '@mui/material'
+import { Alert, Button, Container, Grid, Paper } from '@mui/material'
 import { grey } from '@mui/material/colors'
 import SideNav from '../SideNav'
 import ModelTitleDetails from '../ModelTitleDetails'
-import MainPanel from '../MainPanel'
 import AccordianForm from '../AccordianForm'
 import { TargetTableTypes, OctomizeDataTypes } from '../../constants/types'
 import { addButtonStyle } from '../../styles/theme'
@@ -21,7 +20,8 @@ const App = () => {
   const [benchmarkChecked, setBenchmarkChecked] = useState<boolean>(false)
   const [accelerateChecked, setAccelerateChecked] = useState<boolean>(false)
   const [targetRowData, setTargetRowData] = useState<TargetTableTypes[]>([rowsInputDefault])
-  const [openErrorModal, setErrorModal] = useState<boolean>(false)
+  const [openMessageModal, setMessageModal] = useState<boolean>(false)
+  const [errorAlert, setErrorAlert] = useState<boolean>(false)
   const [modalMessage, setModalMessage] = useState<string>('')
   const [octomizeFormData, setOctomizeFormData] = useState<OctomizeDataTypes>()
 
@@ -85,9 +85,9 @@ const App = () => {
       ...updatedDataRow,
     }
     if (checkForDuplicates(newRowData)) {
-      setModalMessage('No duplicates')
-      setErrorModal(true)
+      setErrorAlert(true)
     } else {
+      setErrorAlert(false)
       setTargetRowData([...newRowData]);
     }
   }
@@ -112,10 +112,9 @@ const App = () => {
     }
 
     setOctomizeFormData(formData)
-
     const msg = JSON.stringify(formData, null, '\t')
     setModalMessage(msg)
-    setErrorModal(true)
+    setMessageModal(true)
   }
 
   return (
@@ -129,7 +128,7 @@ const App = () => {
                 <ModelTitleDetails {...{ title: 'Shufflenet-v2.onnx', details: 'Created three days ago by Mike Johnson' }} />
               </Grid>
               <Grid item xs={9}>
-                <MainPanel>
+                <Paper sx={{ borderRadius: '8px', marginBottom: '64px' }} elevation={6}>
                   <Box sx={{ padding: '24px 24px 10px 24px' }}>
                     <Typography sx={{ color: grey[500], marginBottom: '22px' }} variant='h3'>
                       Octomize
@@ -146,8 +145,11 @@ const App = () => {
                       </Grid>
                     </Grid>
                   </Box>
+                  <>
+                    {errorAlert && <Alert severity="error" onClose={() => setErrorAlert(false)}>Duplicates are not allowed. Please make another selection</Alert>}
+                  </>
                   <TargetTable rowsData={targetRowData} deleteTableRow={deleteTableRow} handleChange={handleChange} />
-                </MainPanel>
+                </Paper>
               </Grid>
               <Grid item xs={3}>
                 <OctomizePanel {...{ totalRuns, targetRowData, benchmarkChecked, runsPerTrial, numTrials, isOctomizeDisabled: isOctomizeDisabled(), watch, isAccelerateComplete: isAccelerateComplete }} />
@@ -156,7 +158,7 @@ const App = () => {
           </Container>
         </Box>
       </form>
-      <MessageModal openModal={openErrorModal} setOpenModal={setErrorModal} message={modalMessage} />
+      <MessageModal openModal={openMessageModal} setOpenModal={setMessageModal} message={modalMessage} />
     </>
   )
 }
