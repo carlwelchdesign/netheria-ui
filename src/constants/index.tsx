@@ -11,7 +11,12 @@ import {
   MenuItem,
   TextField,
 } from '@mui/material'
-import { AccordianDataProps, Engine, Providers, TargetTableTypes } from './types'
+import {
+  AccordianDataProps,
+  Engine,
+  Providers,
+  TargetTableTypes,
+} from './types'
 import { TableHeadText } from '../styles/theme'
 
 export const instances = [

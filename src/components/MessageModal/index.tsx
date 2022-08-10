@@ -23,7 +23,10 @@ const MessageModal = ({ openModal, setOpenModal, message }: Props) => {
           Message:
         </Typography>
         <pre>
-          <Typography id='modal-modal-description' sx={{ mt: 2, overflowWrap: 'break-word' }}>
+          <Typography
+            id='modal-modal-description'
+            sx={{ mt: 2, overflowWrap: 'break-word' }}
+          >
             {message}
           </Typography>
         </pre>

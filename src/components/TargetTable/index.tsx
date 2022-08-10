@@ -35,7 +35,10 @@ export const TableCellHeader = styled(TableCell)(() => ({
 
 const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
   return (
-    <TableContainer component={Paper} sx={{ boxShadow: 'none', borderBottom: 'none' }}>
+    <TableContainer
+      component={Paper}
+      sx={{ boxShadow: 'none', borderBottom: 'none' }}
+    >
       <Table aria-label='hardware-target-table'>
         <TableHead>
           <TableRow>
@@ -113,12 +116,16 @@ const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
                 </Select>
               </TableCell>
               <TableCell sx={{ boxShadow: 'none', borderBottom: 'none' }}>
-                <Typography sx={{ color: `${data.instance ? grey[600] : grey[400]}` }}>
+                <Typography
+                  sx={{ color: `${data.instance ? grey[600] : grey[400]}` }}
+                >
                   {data.vcpu}
                 </Typography>
               </TableCell>
               <TableCell sx={{ boxShadow: 'none', borderBottom: 'none' }}>
-                <Typography sx={{ color: `${data.instance ? grey[600] : grey[400]}` }}>
+                <Typography
+                  sx={{ color: `${data.instance ? grey[600] : grey[400]}` }}
+                >
                   {data.memory}
                 </Typography>
               </TableCell>

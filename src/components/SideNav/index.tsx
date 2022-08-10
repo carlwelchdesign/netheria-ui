@@ -31,7 +31,11 @@ const SideNav = () => (
         <HomeIcon key='home' />,
         <EqualizerIcon key='benchmarks' style={{ transform: 'scaleX(-1)' }} />,
       ].map((icon, index) => (
-        <ListItem key={index} disablePadding sx={{ display: 'block', marginBottom: '62px' }}>
+        <ListItem
+          key={index}
+          disablePadding
+          sx={{ display: 'block', marginBottom: '62px' }}
+        >
           <ListItemButton
             sx={{
               minHeight: 48,

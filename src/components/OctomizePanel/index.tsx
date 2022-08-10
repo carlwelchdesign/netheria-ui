@@ -26,8 +26,14 @@ const OctomizePanel = ({
   isAccelerateComplete,
 }: Props) => {
   return (
-    <Paper sx={{ borderRadius: '8px', padding: '24px', position: 'relative' }} elevation={6}>
-      <Typography sx={{ marginBottom: '0px', textAlign: 'right' }} variant='caption'>
+    <Paper
+      sx={{ borderRadius: '8px', padding: '24px', position: 'relative' }}
+      elevation={6}
+    >
+      <Typography
+        sx={{ marginBottom: '0px', textAlign: 'right' }}
+        variant='caption'
+      >
         Total Runs
       </Typography>
       <Typography sx={totalRunDetailStyle}>{totalRuns}</Typography>
@@ -61,10 +67,16 @@ const OctomizePanel = ({
                         )}
                     </Typography>
                     <Typography
-                      sx={{ fontWeight: 400, fontSize: '12px', marginBottom: '0px' }}
+                      sx={{
+                        fontWeight: 400,
+                        fontSize: '12px',
+                        marginBottom: '0px',
+                      }}
                       variant='caption'
                     >
-                      {`${targetRow.vcpu} core${targetRow.vcpu !== 1 ? 's' : ''}`}
+                      {`${targetRow.vcpu} core${
+                        targetRow.vcpu !== 1 ? 's' : ''
+                      }`}
                     </Typography>
                   </Grid>
                   <Grid item xs={3}>
@@ -77,7 +89,8 @@ const OctomizePanel = ({
                         textAlign: 'right',
                       }}
                     >
-                      {benchmarkChecked && watch('benchmarkHardware') === targetRow.provider
+                      {benchmarkChecked &&
+                      watch('benchmarkHardware') === targetRow.provider
                         ? runsPerTrial * numTrials
                         : 1}
                     </Typography>
@@ -89,7 +102,12 @@ const OctomizePanel = ({
       </>
       <Button
         name={'octomize'}
-        sx={{ width: '100%', height: '48px', borderRadius: '8px', textTransform: 'none' }}
+        sx={{
+          width: '100%',
+          height: '48px',
+          borderRadius: '8px',
+          textTransform: 'none',
+        }}
         type='submit'
         disabled={!isOctomizeDisabled}
         variant='contained'

@@ -19,13 +19,17 @@ const App = () => {
   const { register, handleSubmit, watch } = useForm()
   const [benchmarkChecked, setBenchmarkChecked] = useState<boolean>(false)
   const [accelerateChecked, setAccelerateChecked] = useState<boolean>(false)
-  const [targetRowData, setTargetRowData] = useState<TargetTableTypes[]>([rowsInputDefault])
+  const [targetRowData, setTargetRowData] = useState<TargetTableTypes[]>([
+    rowsInputDefault,
+  ])
   const [openMessageModal, setMessageModal] = useState<boolean>(false)
   const [errorAlert, setErrorAlert] = useState<boolean>(false)
   const [modalMessage, setModalMessage] = useState<string>('')
   const [octomizeFormData, setOctomizeFormData] = useState<OctomizeDataTypes>()
 
-  const isAddButtonDisabled = !!targetRowData.filter((row) => row.instance === '').length
+  const isAddButtonDisabled = !!targetRowData.filter(
+    (row) => row.instance === '',
+  ).length
   const dataLength = targetRowData.filter((row) => row.instance).length
   const runsPerTrial = watch('runs_per_trial') || 1
   const numTrials = watch('num_trials') || 1
@@ -40,9 +44,13 @@ const App = () => {
       }, 0)
     : 0
   const isBenchMarkComplete =
-    benchmarkChecked && !!watch('benchmarkEngine') && !!watch('benchmarkHardware')
+    benchmarkChecked &&
+    !!watch('benchmarkEngine') &&
+    !!watch('benchmarkHardware')
   const isAccelerateComplete =
-    accelerateChecked && !!watch('accelerateEngine') && !!watch('accelerateHardware')
+    accelerateChecked &&
+    !!watch('accelerateEngine') &&
+    !!watch('accelerateHardware')
 
   useEffect(() => {
     console.log({ octomizeFormData })
@@ -82,7 +90,10 @@ const App = () => {
     }
   }
 
-  const handleChange = (index: number, e: { target: { name: string; value: string } }) => {
+  const handleChange = (
+    index: number,
+    e: { target: { name: string; value: string } },
+  ) => {
     const { name, value } = e.target
     const updatedDataRow: TargetTableTypes = {
       ...targetRowData[index],
@@ -143,9 +154,15 @@ const App = () => {
                 />
               </Grid>
               <Grid item xs={9}>
-                <Paper sx={{ borderRadius: '8px', marginBottom: '64px' }} elevation={6}>
+                <Paper
+                  sx={{ borderRadius: '8px', marginBottom: '64px' }}
+                  elevation={6}
+                >
                   <Box sx={{ padding: '24px 24px 10px' }}>
-                    <Typography sx={{ color: grey[500], marginBottom: '22px' }} variant='h3'>
+                    <Typography
+                      sx={{ color: grey[500], marginBottom: '22px' }}
+                      variant='h3'
+                    >
                       Octomize
                     </Typography>
                     <AccordianForm
@@ -160,7 +177,10 @@ const App = () => {
                     />
                     <Grid container spacing={0}>
                       <Grid item xs={11} sx={{ paddingLeft: '0 !important' }}>
-                        <Typography sx={{ marginTop: '60px', color: grey[500] }} variant='body1'>
+                        <Typography
+                          sx={{ marginTop: '60px', color: grey[500] }}
+                          variant='body1'
+                        >
                           Hardware targets
                         </Typography>
                       </Grid>
@@ -179,8 +199,12 @@ const App = () => {
                   </Box>
                   <>
                     {errorAlert && (
-                      <Alert severity='error' onClose={() => setErrorAlert(false)}>
-                        Duplicates are not allowed. Please make another selection
+                      <Alert
+                        severity='error'
+                        onClose={() => setErrorAlert(false)}
+                      >
+                        Duplicates are not allowed. Please make another
+                        selection
                       </Alert>
                     )}
                   </>
