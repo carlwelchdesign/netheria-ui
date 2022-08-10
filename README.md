@@ -1,15 +1,18 @@
 # Netheria UI
 User can create hardware targets. Duplicated are not allowed.
+
 ![list and duplicates](https://user-images.githubusercontent.com/2073707/183807652-7745b8c2-23e6-4a61-912c-95d8f76e46e8.gif)
 
 \
 \
 User can select Accelerate options in the dropdown accordian. Ocotomise panel list items are highlighted with a lightning bolt icon for the coresponding feedback hardware instances.
+
 ![accelerate](https://user-images.githubusercontent.com/2073707/183808650-458e0e41-0d71-49eb-9565-4358a05c4735.gif)
 
 \
 \
 User can update Benchmark options. Calulations in the Octomize feedback panel are affected by the hardware instance selections and trial options.
+
 ![benchmark](https://user-images.githubusercontent.com/2073707/183808877-19afce6e-5322-41cc-9c01-b556ddabda20.gif)
 
 
