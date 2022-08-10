@@ -20,7 +20,6 @@ describe('App Component', () => {
     // Can see the Octomize panel
     screen.getByText('Total Runs')
     screen.getByRole('button', { name: 'Octomize' })
-
   })
   it('can create a list of Hardware targets ', async () => {
     render(<App />)

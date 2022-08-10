@@ -24,8 +24,9 @@ const benchmarkChecked = true
 const isOctomizeDisabled = true
 const isAccelerateComplete = true
 const watch = (str: string) => {
-  if (str) return 'GVM'
+  if (str) return 'mock'
 }
+
 describe('OctomizePanel', () => {
   it('renders OctomizePanel', async () => {
     render(
