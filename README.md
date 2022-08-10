@@ -1,10 +1,93 @@
-# Getting Started with Create React App
+# Netheria UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![list and duplicates](https://user-images.githubusercontent.com/2073707/183807652-7745b8c2-23e6-4a61-912c-95d8f76e46e8.gif)
+
+![accelerate](https://user-images.githubusercontent.com/2073707/183808650-458e0e41-0d71-49eb-9565-4358a05c4735.gif)
+
+![benchmark](https://user-images.githubusercontent.com/2073707/183808877-19afce6e-5322-41cc-9c01-b556ddabda20.gif)
+
+<img width="879" alt="image" src="https://user-images.githubusercontent.com/2073707/183797950-b1d2b2a2-fd14-4eee-b02d-85ccf1dc37fc.png">
+
+Final Data Output:
+```
+{
+	"benchmarks": {
+		"engine": "ONNX",
+		"hardware": "AWS",
+		"numTrials": "5",
+		"runsPerTrial": "6"
+	},
+	"accelerator": {
+		"engine": "TVM",
+		"hardware": "GCP"
+	},
+	"hardwareTargets": [
+		{
+			"provider": "AWS",
+			"instance": "m4.large",
+			"vcpu": 2,
+			"memory": 8
+		},
+		{
+			"provider": "AWS",
+			"instance": "m4.xlarge",
+			"vcpu": 4,
+			"memory": 16
+		},
+		{
+			"provider": "GCP",
+			"instance": "n2-standard-4",
+			"vcpu": 4,
+			"memory": 16
+		},
+		{
+			"provider": "AZURE",
+			"instance": "az-a-series-16",
+			"vcpu": 16,
+			"memory": 64
+		}
+	]
+}
+```
+
+If only one Octomize option is selected, form data is updated accordingly:
+<img width="878" alt="image" src="https://user-images.githubusercontent.com/2073707/183798253-0bb4aafb-7c7a-436c-93e9-145df32dce92.png">
+```
+{
+	"accelerator": {
+		"engine": "TVM",
+		"hardware": "GCP"
+	},
+	"hardwareTargets": [
+		{
+			"provider": "AWS",
+			"instance": "m4.large",
+			"vcpu": 2,
+			"memory": 8
+		},
+		{
+			"provider": "AWS",
+			"instance": "m4.xlarge",
+			"vcpu": 4,
+			"memory": 16
+		},
+		{
+			"provider": "GCP",
+			"instance": "n2-standard-4",
+			"vcpu": 4,
+			"memory": 16
+		},
+		{
+			"provider": "AZURE",
+			"instance": "az-a-series-16",
+			"vcpu": 16,
+			"memory": 64
+		}
+	]
+}
+```
 
 ## Available Scripts
-
-In the project directory, you can run:
 
 ### `yarn start`
 
@@ -23,24 +106,3 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
