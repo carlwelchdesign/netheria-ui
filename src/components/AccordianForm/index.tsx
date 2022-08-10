@@ -15,8 +15,7 @@ const AccordianForm = ({ data }: { data: AccordianProps[] }) => (
   <>
     {data.map((prop: AccordianProps, index: number) => {
       const { title, handleCheckBoxChange, detail, optionsTable, checked } = prop
-      const [expanded, setExpanded] = useState(false);
-
+      const [expanded, setExpanded] = useState(false)
       return (
         <CustomAccordian key={title} expanded={expanded} onChange={() => setExpanded(!expanded)} sx={{ marginBottom: '16px', paddingLeft: '10px' }} variant="outlined">
           <Box sx={{
