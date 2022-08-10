@@ -1,6 +1,6 @@
 import React from 'react'
 import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, Select, MenuItem, TextField } from '@mui/material'
-import { Engine, Providers, TargetTableTypes } from './types'
+import { AccordianDataProps, Engine, Providers, TargetTableTypes } from './types'
 import { TableHeadText } from '../styles/theme'
 
 export const instances = [
@@ -23,23 +23,6 @@ export const rowsInputDefault: TargetTableTypes = {
   instance: '',
   vcpu: 0,
   memory: 0
-}
-
-export type AccordianProps = {
-  title: string
-  detail: string
-  checked: boolean
-  handleCheckBoxChange: () => void
-  optionsTable?: unknown
-}
-
-export type AccordianDataProps = {
-  setBenchmarkChecked: (arg0: boolean)=>void
-  setAccelerateChecked: (arg0: boolean)=>void
-  benchmarkChecked: boolean
-  accelerateChecked: boolean
-  register: (arg0: string) => Record<string, unknown>
-  watch: (arg0: string) => Record<string, unknown>
 }
 
 export const getAccordianData = ({setBenchmarkChecked, setAccelerateChecked, benchmarkChecked, accelerateChecked, register, watch}: AccordianDataProps) => {
