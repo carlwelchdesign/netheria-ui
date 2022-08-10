@@ -64,7 +64,7 @@ Final Data Output:
 }
 ```
 
-If only one Octomize option is selected, data is form data is updated accordingly:
+If only one Octomize option is selected, form data is updated accordingly:
 <img width="878" alt="image" src="https://user-images.githubusercontent.com/2073707/183798253-0bb4aafb-7c7a-436c-93e9-145df32dce92.png">
 ```
 {
