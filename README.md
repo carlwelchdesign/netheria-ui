@@ -5,6 +5,7 @@ User can create hardware targets. Duplicated are not allowed. Octomize feedback 
 
 ![list and duplicates](https://user-images.githubusercontent.com/2073707/183807652-7745b8c2-23e6-4a61-912c-95d8f76e46e8.gif)  
 
+
 ## Accelerate
 
 User can select Accelerate options in the dropdown accordian. Octomize panel list items are highlighted with a lightning bolt icon for the coresponding feedback hardware instances.
@@ -18,10 +19,11 @@ User can update Benchmark options. Calulations in the Octomize feedback panel ar
 ![benchmark](https://user-images.githubusercontent.com/2073707/183808877-19afce6e-5322-41cc-9c01-b556ddabda20.gif)
 
 
-å
-## Final Data Output:
+\
+\
+Final Data Output:
 
-<img width="879" alt="image" src="https://user-images.gåithubusercontent.com/2073707/183797950-b1d2b2a2-fd14-4eee-b02d-85ccf1dc37fc.png">
+<img width="879" alt="image" src="https://user-images.githubusercontent.com/2073707/183797950-b1d2b2a2-fd14-4eee-b02d-85ccf1dc37fc.png">
 
 ```
 {
