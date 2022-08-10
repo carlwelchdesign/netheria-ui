@@ -1,6 +1,7 @@
 import { createTheme } from '@mui/material/styles'
-import { styled, Typography } from '@mui/material'
+import { styled, Typography, Avatar } from '@mui/material'
 import { grey, blue } from '@mui/material/colors'
+import MuiDrawer from '@mui/material/Drawer'
 
 export const theme = createTheme({
   typography: {
@@ -168,7 +169,7 @@ export const modalStyle = {
   pb: 3,
 }
 
-export const Drawer = styled(MuiDrawer)(() => ({
+export const LeftNav = styled(MuiDrawer)(() => ({
   width: 64,
   flexShrink: 0,
   whiteSpace: 'nowrap',

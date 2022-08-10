@@ -30,9 +30,11 @@ const App = () => {
   const isAddButtonDisabled = !!targetRowData.filter(
     (row) => row.instance === '',
   ).length
+  
   const dataLength = targetRowData.filter((row) => row.instance).length
   const runsPerTrial = watch('runs_per_trial') || 1
   const numTrials = watch('num_trials') || 1
+
   const totalRuns = dataLength
     ? targetRowData.reduce((accumulator, obj) => {
         return obj.instance
@@ -43,10 +45,12 @@ const App = () => {
           : accumulator
       }, 0)
     : 0
+
   const isBenchMarkComplete =
     benchmarkChecked &&
     !!watch('benchmarkEngine') &&
     !!watch('benchmarkHardware')
+
   const isAccelerateComplete =
     accelerateChecked &&
     !!watch('accelerateEngine') &&
