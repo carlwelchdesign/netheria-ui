@@ -64,6 +64,43 @@ Final Data Output:
 }
 ```
 
+If only one Octomize option is selected, data is form data is updated accordingly:
+<img width="878" alt="image" src="https://user-images.githubusercontent.com/2073707/183798253-0bb4aafb-7c7a-436c-93e9-145df32dce92.png">
+```
+{
+	"accelerator": {
+		"engine": "TVM",
+		"hardware": "GCP"
+	},
+	"hardwareTargets": [
+		{
+			"provider": "AWS",
+			"instance": "m4.large",
+			"vcpu": 2,
+			"memory": 8
+		},
+		{
+			"provider": "AWS",
+			"instance": "m4.xlarge",
+			"vcpu": 4,
+			"memory": 16
+		},
+		{
+			"provider": "GCP",
+			"instance": "n2-standard-4",
+			"vcpu": 4,
+			"memory": 16
+		},
+		{
+			"provider": "AZURE",
+			"instance": "az-a-series-16",
+			"vcpu": 16,
+			"memory": 64
+		}
+	]
+}
+```
+
 ## Available Scripts
 
 ### `yarn start`
