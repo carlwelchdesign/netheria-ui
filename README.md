@@ -89,21 +89,39 @@ If only one Octomize option is selected, form data is updated accordingly:
 	]
 }
 ```
+Prerequisites:
+
+```
+nvm use 16.16.0
+```
 
 ## Available Scripts
 
-### `yarn start`
+Project setup:
 
-Runs the app in the development mode.\
+```
+yarn install
+```
+
+In the project directory, you can run:
+
+```
+yarn start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+Run test suite:
 
-### `yarn test`
+```
+yarn test
+```
+Launches the test runner in the interactive watch mode.
 
-Launches the test runner in the interactive watch mode.\
+with test coverage:
 
-
-### `yarn test:coverage`
-Launches the test runner and concludes with a test covereage report
+```
+yarn test:coverage
+```
 
 
