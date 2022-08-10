@@ -132,7 +132,7 @@ const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
               <TableCell sx={{ boxShadow: 'none', borderBottom: 'none' }}>
                 {data.instance && (
                   <IconButton
-                    disabled={rowsData.length === 1}
+                    disabled={rowsData.length === 0}
                     onClick={() => deleteTableRow(index)}
                   >
                     <ClearIcon />

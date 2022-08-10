@@ -82,6 +82,8 @@ const App = () => {
       const rows = [...targetRowData]
       rows.splice(index, 1)
       setTargetRowData(rows)
+    } else {
+      setTargetRowData([rowsInputDefault])
     }
   }
 
