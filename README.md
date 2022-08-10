@@ -1,6 +1,6 @@
 # Netheria UI
 
-![list and duplicates 2](https://user-images.githubusercontent.com/2073707/183807060-d8d0eabb-6ce9-43d8-8ad8-19aeae4a4439.gif)
+![list and duplicates](https://user-images.githubusercontent.com/2073707/183807652-7745b8c2-23e6-4a61-912c-95d8f76e46e8.gif)
 
 ![Aug-09-2022 20-13-28](https://user-images.githubusercontent.com/2073707/183802418-03d75bac-a235-4a0e-8ff2-f693c1800e47.gif)
 
