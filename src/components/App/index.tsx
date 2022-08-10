@@ -129,7 +129,7 @@ const App = () => {
               </Grid>
               <Grid item xs={9}>
                 <Paper sx={{ borderRadius: '8px', marginBottom: '64px' }} elevation={6}>
-                  <Box sx={{ padding: '24px 24px 10px 24px' }}>
+                  <Box sx={{ padding: '24px 24px 10px' }}>
                     <Typography sx={{ color: grey[500], marginBottom: '22px' }} variant='h3'>
                       Octomize
                     </Typography>
