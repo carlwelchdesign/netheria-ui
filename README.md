@@ -6,7 +6,7 @@ User can create hardware targets. Duplicated are not allowed. Octomize feedback 
 
 \
 \
-User can select Accelerate options in the dropdown accordian. Ocotomise panel list items are highlighted with a lightning bolt icon for the coresponding feedback hardware instances.
+User can select Accelerate options in the dropdown accordian. Octomize panel list items are highlighted with a lightning bolt icon for the coresponding feedback hardware instances.
 
 ![accelerate](https://user-images.githubusercontent.com/2073707/183808650-458e0e41-0d71-49eb-9565-4358a05c4735.gif)
 
