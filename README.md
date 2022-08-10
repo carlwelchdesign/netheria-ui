@@ -1,4 +1,7 @@
 # Netheria UI
+
+![Aug-09-2022 20-13-28](https://user-images.githubusercontent.com/2073707/183802418-03d75bac-a235-4a0e-8ff2-f693c1800e47.gif)
+
 <img width="880" alt="image" src="https://user-images.githubusercontent.com/2073707/183795842-cdb54700-9865-4d32-a6a5-6b1e42dc1e0b.png">
 
 <img width="878" alt="image" src="https://user-images.githubusercontent.com/2073707/183795906-d922727c-b446-4ffb-b0dc-c5d8d55ee44a.png">
