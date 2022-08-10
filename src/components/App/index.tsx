@@ -30,7 +30,7 @@ const App = () => {
   const isAddButtonDisabled = !!targetRowData.filter(
     (row) => row.instance === '',
   ).length
-  
+
   const dataLength = targetRowData.filter((row) => row.instance).length
   const runsPerTrial = watch('runs_per_trial') || 1
   const numTrials = watch('num_trials') || 1
@@ -57,7 +57,7 @@ const App = () => {
     !!watch('accelerateHardware')
 
   useEffect(() => {
-    console.log({ octomizeFormData })
+    octomizeFormData && console.log({ octomizeFormData })
   }, [octomizeFormData])
 
   const isOctomizeDisabled = () => {

@@ -16,8 +16,11 @@ describe('App Component', () => {
     // I can see the hardware Target table
     screen.getByText('Hardware targets')
     screen.getByLabelText('hardware-target-table')
+    screen.getByRole('button', { name: 'Add' })
     // Can see the Octomize panel
     screen.getByText('Total Runs')
+    screen.getByRole('button', { name: 'Octomize' })
+
   })
   it('can create a list of Hardware targets ', async () => {
     render(<App />)
