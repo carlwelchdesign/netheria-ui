@@ -2,7 +2,9 @@
 
 ![list and duplicates](https://user-images.githubusercontent.com/2073707/183807652-7745b8c2-23e6-4a61-912c-95d8f76e46e8.gif)
 
-![Aug-09-2022 20-13-28](https://user-images.githubusercontent.com/2073707/183802418-03d75bac-a235-4a0e-8ff2-f693c1800e47.gif)
+![accelerate](https://user-images.githubusercontent.com/2073707/183808650-458e0e41-0d71-49eb-9565-4358a05c4735.gif)
+
+![benchmark](https://user-images.githubusercontent.com/2073707/183808877-19afce6e-5322-41cc-9c01-b556ddabda20.gif)
 
 <img width="879" alt="image" src="https://user-images.githubusercontent.com/2073707/183797950-b1d2b2a2-fd14-4eee-b02d-85ccf1dc37fc.png">
 
