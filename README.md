@@ -6,9 +6,10 @@
 
 ![benchmark](https://user-images.githubusercontent.com/2073707/183808877-19afce6e-5322-41cc-9c01-b556ddabda20.gif)
 
+Final Data Output:
+
 <img width="879" alt="image" src="https://user-images.githubusercontent.com/2073707/183797950-b1d2b2a2-fd14-4eee-b02d-85ccf1dc37fc.png">
 
-Final Data Output:
 ```
 {
 	"benchmarks": {
@@ -51,6 +52,7 @@ Final Data Output:
 ```
 
 If only one Octomize option is selected, form data is updated accordingly:
+
 <img width="878" alt="image" src="https://user-images.githubusercontent.com/2073707/183798253-0bb4aafb-7c7a-436c-93e9-145df32dce92.png">
 ```
 {
@@ -100,9 +102,9 @@ You will also see any lint errors in the console.
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `yarn test:coverage`
+Launches the test runner and concludes with a test covereage report
+
+
