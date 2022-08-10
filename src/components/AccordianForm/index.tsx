@@ -38,6 +38,7 @@ const AccordianForm = ({ data }: { data: AccordianProps[] }) => (
           >
             <Checkbox
               checked={checked}
+              disableRipple
               onChange={(e) => {
                 e.stopPropagation()
                 handleCheckBoxChange()
