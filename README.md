@@ -123,6 +123,5 @@ with test coverage:
 ```
 yarn test:coverage
 ```
-![image](https://user-images.githubusercontent.com/2073707/183841750-40f6832b-5f2d-4ac2-bcb3-c3c996bcbfb3.png)
 
 
