@@ -1,6 +1,6 @@
 import { Paper, Typography, Box, Grid, Button } from '@mui/material'
 import React from 'react'
-import { TargetTableTypes } from '../../constants/types'
+import { OctomizePanelProps, TargetTableTypes } from '../../constants/types'
 import {
   boxContainerStyle,
   coreTextStyle,
@@ -15,17 +15,6 @@ import {
 } from '../../styles/theme'
 import FlashAutoIcon from '@mui/icons-material/FlashAuto'
 
-type Props = {
-  totalRuns: number
-  targetRowData: TargetTableTypes[]
-  benchmarkChecked: boolean
-  runsPerTrial: number
-  numTrials: number
-  isOctomizeDisabled: boolean
-  isAccelerateComplete: boolean
-  watch: (arg0: string) => unknown
-}
-
 const OctomizePanel = ({
   totalRuns,
   targetRowData,
@@ -35,7 +24,7 @@ const OctomizePanel = ({
   isOctomizeDisabled,
   watch,
   isAccelerateComplete,
-}: Props) => {
+}: OctomizePanelProps) => {
   return (
     <Paper sx={panelStyle} elevation={6}>
       <Typography sx={totalRunsTextStyle} variant='caption'>

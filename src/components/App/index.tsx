@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { Alert, Button } from '@mui/material'
 import ModelTitleDetails from '../ModelTitleDetails'
 import AccordianForm from '../AccordianForm'
-import { TargetTableTypes, OctomizeDataTypes } from '../../constants/types'
+import {
+  TargetTableTypes,
+  OctomizeDataTypes,
+  OctomizePanelProps,
+} from '../../constants/types'
 import { FieldValues, useForm } from 'react-hook-form'
 import TargetTable from '../TargetTable'
 import { instances, rowsInputDefault, getAccordianForms } from '../../constants'
@@ -152,7 +156,7 @@ const App = () => {
 
   const accordianForm = <AccordianForm data={accordianData} />
 
-  const modelTitleDetails = (
+  const modelTitleDetails: JSX.Element = (
     <ModelTitleDetails
       {...{
         title: 'Shufflenet-v2.onnx',
@@ -161,7 +165,7 @@ const App = () => {
     />
   )
 
-  const octomizePanelProps = {
+  const octomizePanelProps: OctomizePanelProps = {
     totalRuns,
     targetRowData,
     benchmarkChecked,
@@ -172,7 +176,7 @@ const App = () => {
     isAccelerateComplete: isAccelerateComplete,
   }
 
-  const addRowButton = (
+  const addRowButton: JSX.Element = (
     <Button
       name={'add-target'}
       sx={addButtonStyle}
@@ -184,7 +188,7 @@ const App = () => {
     </Button>
   )
 
-  const duplicateAlert = (
+  const duplicateAlert: JSX.Element = (
     <>
       {errorAlert && (
         <Alert severity='error' onClose={() => setErrorAlert(false)}>
@@ -194,7 +198,7 @@ const App = () => {
     </>
   )
 
-  const targetTable = (
+  const targetTable: JSX.Element = (
     <TargetTable
       rowsData={targetRowData}
       deleteTableRow={deleteTableRow}

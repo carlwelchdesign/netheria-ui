@@ -46,3 +46,14 @@ export type AccordianDataProps = {
   register: (arg0: string) => Record<string, unknown>
   watch: (arg0: string) => Record<string, unknown>
 }
+
+export type OctomizePanelProps = {
+  totalRuns: number
+  targetRowData: TargetTableTypes[]
+  benchmarkChecked: boolean
+  runsPerTrial: number
+  numTrials: number
+  isOctomizeDisabled: boolean
+  isAccelerateComplete: boolean
+  watch: (arg0: string) => unknown
+}
