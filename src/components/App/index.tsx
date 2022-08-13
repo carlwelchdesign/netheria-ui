@@ -166,17 +166,6 @@ const App = () => {
     />
   )
 
-  const octomizePanelProps: OctomizePanelProps = {
-    totalRuns,
-    targetRowData,
-    benchmarkChecked,
-    runsPerTrial,
-    numTrials,
-    isOctomizeDisabled: isOctomizeDisabled(),
-    watch,
-    isAccelerateComplete: isAccelerateComplete,
-  }
-
   const addRowButton: JSX.Element = (
     <Button
       name={'add-target'}
@@ -206,6 +195,17 @@ const App = () => {
       handleChange={handleHardwareTargetChange}
     />
   )
+
+  const octomizePanelProps: OctomizePanelProps = {
+    totalRuns,
+    targetRowData,
+    benchmarkChecked,
+    runsPerTrial,
+    numTrials,
+    isOctomizeDisabled: isOctomizeDisabled(),
+    watch,
+    isAccelerateComplete: isAccelerateComplete,
+  }
 
   const octomizePanel: JSX.Element = <OctomizePanel {...octomizePanelProps} />
 
