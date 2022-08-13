@@ -150,6 +150,8 @@ const App = () => {
     watch,
   })
 
+  const accordianForm = <AccordianForm data={accordianData} />
+
   const modelTitleDetails = (
     <ModelTitleDetails
       {...{
@@ -207,7 +209,7 @@ const App = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <MainGrid
           modelTitleDetails={modelTitleDetails}
-          accordianForm={<AccordianForm data={accordianData} />}
+          accordianForm={accordianForm}
           addRowButton={addRowButton}
           duplicateAlert={duplicateAlert}
           targetTable={targetTable}
