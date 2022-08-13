@@ -166,39 +166,45 @@ const App = () => {
     isAccelerateComplete: isAccelerateComplete,
   }
 
+  const addRowButton = (
+    <Button
+      name={'add-target'}
+      sx={addButtonStyle}
+      variant='contained'
+      disabled={isAddButtonDisabled}
+      onClick={addTableRows}
+    >
+      Add
+    </Button>
+  )
+
+  const duplicateAlert = (
+    <>
+      {errorAlert && (
+        <Alert severity='error' onClose={() => setErrorAlert(false)}>
+          Duplicates are not allowed. Please make another selection
+        </Alert>
+      )}
+    </>
+  )
+
+  const targetTable = (
+    <TargetTable
+      rowsData={targetRowData}
+      deleteTableRow={deleteTableRow}
+      handleChange={handleHardwareTargetChange}
+    />
+  )
+
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <MainGrid
           modelTitleDetails={<ModelTitleDetails {...modelDetailProps} />}
           accordianForm={<AccordianForm data={accordianData} />}
-          addRowButton={
-            <Button
-              name={'add-target'}
-              sx={addButtonStyle}
-              variant='contained'
-              disabled={isAddButtonDisabled}
-              onClick={addTableRows}
-            >
-              Add
-            </Button>
-          }
-          duplicateAlert={
-            <>
-              {errorAlert && (
-                <Alert severity='error' onClose={() => setErrorAlert(false)}>
-                  Duplicates are not allowed. Please make another selection
-                </Alert>
-              )}
-            </>
-          }
-          targetTable={
-            <TargetTable
-              rowsData={targetRowData}
-              deleteTableRow={deleteTableRow}
-              handleChange={handleHardwareTargetChange}
-            />
-          }
+          addRowButton={addRowButton}
+          duplicateAlert={duplicateAlert}
+          targetTable={targetTable}
           octomizePanel={<OctomizePanel {...octomizePanelProps} />}
         />
       </form>
