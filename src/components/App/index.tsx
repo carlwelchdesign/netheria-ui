@@ -103,7 +103,7 @@ const App = () => {
     }
   }
 
-  const handleChange = (
+  const handleHardwareTargetChange = (
     index: number,
     e: { target: { name: string; value: string } },
   ) => {
@@ -218,7 +218,7 @@ const App = () => {
                   <TargetTable
                     rowsData={targetRowData}
                     deleteTableRow={deleteTableRow}
-                    handleChange={handleChange}
+                    handleChange={handleHardwareTargetChange}
                   />
                 </Paper>
               </Grid>
