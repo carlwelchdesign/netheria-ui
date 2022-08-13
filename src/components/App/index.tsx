@@ -22,13 +22,13 @@ const App = () => {
   const { register, handleSubmit, watch } = useForm()
   const [benchmarkChecked, setBenchmarkChecked] = useState<boolean>(false)
   const [accelerateChecked, setAccelerateChecked] = useState<boolean>(false)
-  const [targetRowData, setTargetRowData] = useState<TargetTableTypes[]>([
-    rowsInputDefault,
-  ])
   const [openMessageModal, setMessageModal] = useState<boolean>(false)
   const [errorAlert, setErrorAlert] = useState<boolean>(false)
   const [modalMessage, setModalMessage] = useState<string>('')
   const [octomizeFormData, setOctomizeFormData] = useState<OctomizeDataTypes>()
+  const [targetRowData, setTargetRowData] = useState<TargetTableTypes[]>([
+    rowsInputDefault,
+  ])
 
   const isAddButtonDisabled = !!targetRowData.filter(
     (row) => row.instance === '',
