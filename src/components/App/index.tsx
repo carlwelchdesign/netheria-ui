@@ -1,26 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import { Alert, Button, Container, Grid, Paper } from '@mui/material'
-import SideNav from '../SideNav'
+import { Alert, Button } from '@mui/material'
 import ModelTitleDetails from '../ModelTitleDetails'
 import AccordianForm from '../AccordianForm'
 import { TargetTableTypes, OctomizeDataTypes } from '../../constants/types'
-import {
-  accorianContainerStyle,
-  addButtonStyle,
-  flexStyle,
-  hardwareTargetTableHeadingStyle,
-  hardwareTargetTextStyle,
-  mainPanelStyle,
-  octomizeTitleTextStyle,
-} from '../../styles/theme'
 import { FieldValues, useForm } from 'react-hook-form'
 import TargetTable from '../TargetTable'
 import { instances, rowsInputDefault, getAccordianForms } from '../../constants'
 import MessageModal from '../MessageModal'
 import OctomizePanel from '../OctomizePanel'
 import { checkForDuplicates } from '../../utils'
+import MainGrid from '../MainGrid'
+import { addButtonStyle } from '../../styles/theme'
 
 const App = () => {
   const { register, handleSubmit, watch } = useForm()
@@ -154,91 +144,69 @@ const App = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Box sx={flexStyle}>
-          <SideNav />
-          <Container>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <ModelTitleDetails
-                  {...{
-                    title: 'Shufflenet-v2.onnx',
-                    details: 'Created three days ago by Mike Johnson',
-                  }}
-                />
-              </Grid>
-              <Grid item xs={9}>
-                <Paper sx={mainPanelStyle} elevation={6}>
-                  <Box sx={accorianContainerStyle}>
-                    <Typography sx={octomizeTitleTextStyle} variant='h3'>
-                      Octomize
-                    </Typography>
-                    <AccordianForm
-                      data={getAccordianForms({
-                        setBenchmarkChecked,
-                        setAccelerateChecked,
-                        benchmarkChecked,
-                        accelerateChecked,
-                        register,
-                        watch,
-                      })}
-                    />
-                    <Grid container spacing={0}>
-                      <Grid item xs={11} sx={hardwareTargetTableHeadingStyle}>
-                        <Typography
-                          sx={hardwareTargetTextStyle}
-                          variant='body1'
-                        >
-                          Hardware targets
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={1} sx={flexStyle}>
-                        <Button
-                          name={'add-target'}
-                          sx={addButtonStyle}
-                          variant='contained'
-                          disabled={isAddButtonDisabled}
-                          onClick={addTableRows}
-                        >
-                          Add
-                        </Button>
-                      </Grid>
-                    </Grid>
-                  </Box>
-                  <>
-                    {errorAlert && (
-                      <Alert
-                        severity='error'
-                        onClose={() => setErrorAlert(false)}
-                      >
-                        Duplicates are not allowed. Please make another
-                        selection
-                      </Alert>
-                    )}
-                  </>
-                  <TargetTable
-                    rowsData={targetRowData}
-                    deleteTableRow={deleteTableRow}
-                    handleChange={handleHardwareTargetChange}
-                  />
-                </Paper>
-              </Grid>
-              <Grid item xs={3}>
-                <OctomizePanel
-                  {...{
-                    totalRuns,
-                    targetRowData,
-                    benchmarkChecked,
-                    runsPerTrial,
-                    numTrials,
-                    isOctomizeDisabled: isOctomizeDisabled(),
-                    watch,
-                    isAccelerateComplete: isAccelerateComplete,
-                  }}
-                />
-              </Grid>
-            </Grid>
-          </Container>
-        </Box>
+        <MainGrid
+          modelTitleDetails={
+            <ModelTitleDetails
+              {...{
+                title: 'Shufflenet-v2.onnx',
+                details: 'Created three days ago by Mike Johnson',
+              }}
+            />
+          }
+          accordianForm={
+            <AccordianForm
+              data={getAccordianForms({
+                setBenchmarkChecked,
+                setAccelerateChecked,
+                benchmarkChecked,
+                accelerateChecked,
+                register,
+                watch,
+              })}
+            />
+          }
+          addRowButton={
+            <Button
+              name={'add-target'}
+              sx={addButtonStyle}
+              variant='contained'
+              disabled={isAddButtonDisabled}
+              onClick={addTableRows}
+            >
+              Add
+            </Button>
+          }
+          duplicateAlert={
+            <>
+              {errorAlert && (
+                <Alert severity='error' onClose={() => setErrorAlert(false)}>
+                  Duplicates are not allowed. Please make another selection
+                </Alert>
+              )}
+            </>
+          }
+          targetTable={
+            <TargetTable
+              rowsData={targetRowData}
+              deleteTableRow={deleteTableRow}
+              handleChange={handleHardwareTargetChange}
+            />
+          }
+          octomizePanel={
+            <OctomizePanel
+              {...{
+                totalRuns,
+                targetRowData,
+                benchmarkChecked,
+                runsPerTrial,
+                numTrials,
+                isOctomizeDisabled: isOctomizeDisabled(),
+                watch,
+                isAccelerateComplete: isAccelerateComplete,
+              }}
+            />
+          }
+        />
       </form>
       <MessageModal
         openModal={openMessageModal}
