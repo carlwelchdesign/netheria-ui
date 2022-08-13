@@ -207,7 +207,7 @@ const App = () => {
     />
   )
 
-  const octomizePanel = <OctomizePanel {...octomizePanelProps} />
+  const octomizePanel: JSX.Element = <OctomizePanel {...octomizePanelProps} />
 
   return (
     <>
