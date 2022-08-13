@@ -14,7 +14,31 @@ import { AccordianProps } from '../../constants/types'
 
 const CustomAccordian = styled(Accordion)(() => ({
   borderRadius: '6px',
+  marginBottom: '16px',
+  paddingLeft: '10px',
 }))
+
+const accordionSummaryStyle = {
+  margin: '0 !important',
+  minHeight: 'auto !important',
+  paddingLeft: '10px',
+}
+
+const expandMoreIconStyle = { alignSelf: 'flex-end', display: 'flex' }
+
+const accordionSummaryTextStyle = {
+  fontWeight: 700,
+  color: grey[900],
+  margin: '12px 0 0',
+}
+
+const accordionDetailsStyle = {
+  margin: '0 16px 0 0',
+  padding: '0 16px',
+  paddingLeft: '10px',
+}
+
+const accordionDetailsTextStyle = { fontWeight: 400, padding: '0px 0 16px 0' }
 
 const AccordianForm = ({ data }: { data: AccordianProps[] }) => (
   <>
@@ -27,7 +51,6 @@ const AccordianForm = ({ data }: { data: AccordianProps[] }) => (
           key={title}
           expanded={expanded}
           onChange={() => setExpanded(!expanded)}
-          sx={{ marginBottom: '16px', paddingLeft: '10px' }}
           variant='outlined'
         >
           <Box
@@ -48,37 +71,17 @@ const AccordianForm = ({ data }: { data: AccordianProps[] }) => (
             />
             <Box>
               <AccordionSummary
-                expandIcon={
-                  <ExpandMoreIcon
-                    sx={{ alignSelf: 'flex-end', display: 'flex' }}
-                  />
-                }
+                expandIcon={<ExpandMoreIcon sx={expandMoreIconStyle} />}
                 aria-controls={`panel${index}bh-header`}
                 id={`panel${index}bh-header`}
-                sx={{
-                  margin: '0 !important',
-                  minHeight: 'auto !important',
-                  paddingLeft: '10px',
-                }}
+                sx={accordionSummaryStyle}
               >
-                <Typography
-                  sx={{ fontWeight: 700, color: grey[900], margin: '12px 0 0' }}
-                  variant='h2'
-                >
+                <Typography sx={accordionSummaryTextStyle} variant='h2'>
                   {title}
                 </Typography>
               </AccordionSummary>
-              <AccordionDetails
-                sx={{
-                  margin: '0 16px 0 0',
-                  padding: '0 16px',
-                  paddingLeft: '10px',
-                }}
-              >
-                <Typography
-                  sx={{ fontWeight: 400, padding: '0px 0 16px 0' }}
-                  variant='body2'
-                >
+              <AccordionDetails sx={accordionDetailsStyle}>
+                <Typography sx={accordionDetailsTextStyle} variant='body2'>
                   {detail}
                 </Typography>
               </AccordionDetails>
