@@ -7,7 +7,14 @@ import SideNav from '../SideNav'
 import ModelTitleDetails from '../ModelTitleDetails'
 import AccordianForm from '../AccordianForm'
 import { TargetTableTypes, OctomizeDataTypes } from '../../constants/types'
-import { addButtonStyle } from '../../styles/theme'
+import {
+  accorianContainerStyle,
+  addButtonStyle,
+  flexStyle,
+  hardwareTargetTableHeadingStyle,
+  hardwareTargetTextStyle,
+  mainPanelStyle,
+} from '../../styles/theme'
 import { FieldValues, useForm } from 'react-hook-form'
 import TargetTable from '../TargetTable'
 import { instances, rowsInputDefault, getAccordianForms } from '../../constants'
@@ -147,7 +154,7 @@ const App = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={flexStyle}>
           <SideNav />
           <Container>
             <Grid container spacing={2}>
@@ -160,11 +167,8 @@ const App = () => {
                 />
               </Grid>
               <Grid item xs={9}>
-                <Paper
-                  sx={{ borderRadius: '8px', marginBottom: '64px' }}
-                  elevation={6}
-                >
-                  <Box sx={{ padding: '24px 24px 10px' }}>
+                <Paper sx={mainPanelStyle} elevation={6}>
+                  <Box sx={accorianContainerStyle}>
                     <Typography
                       sx={{ color: grey[500], marginBottom: '22px' }}
                       variant='h3'
@@ -182,15 +186,15 @@ const App = () => {
                       })}
                     />
                     <Grid container spacing={0}>
-                      <Grid item xs={11} sx={{ paddingLeft: '0 !important' }}>
+                      <Grid item xs={11} sx={hardwareTargetTableHeadingStyle}>
                         <Typography
-                          sx={{ marginTop: '60px', color: grey[500] }}
+                          sx={hardwareTargetTextStyle}
                           variant='body1'
                         >
                           Hardware targets
                         </Typography>
                       </Grid>
-                      <Grid item xs={1} sx={{ display: 'flex' }}>
+                      <Grid item xs={1} sx={flexStyle}>
                         <Button
                           name={'add-target'}
                           sx={addButtonStyle}

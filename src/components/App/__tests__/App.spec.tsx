@@ -54,14 +54,18 @@ describe('App Component', () => {
     // I can click the accordian to open
     await waitFor(() => UserEvent.click(screen.getByText('Benchmark')))
     // I can see the form elements
-    await waitFor(() => UserEvent.click(screen.getAllByText('Select Engine')[0]))
+    await waitFor(() =>
+      UserEvent.click(screen.getAllByText('Select Engine')[0]),
+    )
     // I can see the Engine dropdown
     screen.getByText('ONNX')
     screen.getByText('TVM')
     // and I select an option
     await waitFor(() => UserEvent.click(screen.getByText('ONNX')))
     // then I can select the hardware options
-    await waitFor(() => UserEvent.click(screen.getAllByText('Select Hardware')[0]))
+    await waitFor(() =>
+      UserEvent.click(screen.getAllByText('Select Hardware')[0]),
+    )
     // and I see the hardware options
     screen.getByText('AWS')
     screen.getByText('GCP')
@@ -72,14 +76,18 @@ describe('App Component', () => {
     // I can click the accordian to open
     await waitFor(() => UserEvent.click(screen.getByText('Accelerate')))
     // I can see the form elements
-    await waitFor(() => UserEvent.click(screen.getAllByText('Select Engine')[1]))
+    await waitFor(() =>
+      UserEvent.click(screen.getAllByText('Select Engine')[1]),
+    )
     // I can see the Engine dropdown
     screen.getByText('ONNX')
     screen.getByText('TVM')
     // and I select an option
     await waitFor(() => UserEvent.click(screen.getByText('ONNX')))
     // then I can select the hardware options
-    await waitFor(() => UserEvent.click(screen.getAllByText('Select Hardware')[1]))
+    await waitFor(() =>
+      UserEvent.click(screen.getAllByText('Select Hardware')[1]),
+    )
     // and I see the hardware options
     screen.getByText('AWS')
     screen.getByText('GCP')

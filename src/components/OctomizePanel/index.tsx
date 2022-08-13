@@ -1,7 +1,18 @@
 import { Paper, Typography, Box, Grid, Button } from '@mui/material'
 import React from 'react'
 import { TargetTableTypes } from '../../constants/types'
-import { totalRunDetailStyle } from '../../styles/theme'
+import {
+  boxContainerStyle,
+  coreTextStyle,
+  flashIconStyle,
+  gridContainerStyle,
+  instanceTextStyle,
+  itemRunsStyle,
+  panelStyle,
+  submitButtonStyle,
+  totalRunDetailStyle,
+  totalRunsTextStyle,
+} from '../../styles/theme'
 import FlashAutoIcon from '@mui/icons-material/FlashAuto'
 
 type Props = {
@@ -26,14 +37,8 @@ const OctomizePanel = ({
   isAccelerateComplete,
 }: Props) => {
   return (
-    <Paper
-      sx={{ borderRadius: '8px', padding: '24px', position: 'relative' }}
-      elevation={6}
-    >
-      <Typography
-        sx={{ marginBottom: '0px', textAlign: 'right' }}
-        variant='caption'
-      >
+    <Paper sx={panelStyle} elevation={6}>
+      <Typography sx={totalRunsTextStyle} variant='caption'>
         Total Runs
       </Typography>
       <Typography sx={totalRunDetailStyle}>{totalRuns}</Typography>
@@ -41,54 +46,24 @@ const OctomizePanel = ({
         {targetRowData.map(
           (targetRow, index) =>
             targetRow.instance && (
-              <Box key={index} sx={{ display: 'flex' }}>
-                <Grid container spacing={0} sx={{ marginBottom: '14px' }}>
+              <Box key={index} sx={boxContainerStyle}>
+                <Grid container spacing={0} sx={gridContainerStyle}>
                   <Grid item xs={9}>
-                    <Typography
-                      sx={{
-                        fontWeight: 600,
-                        fontSize: '16px',
-                        marginBottom: '0px',
-                        display: 'inline',
-                      }}
-                      variant='body1'
-                    >
+                    <Typography sx={instanceTextStyle} variant='body1'>
                       {targetRow.instance}
                       {isAccelerateComplete &&
                         watch('accelerateHardware') === targetRow.provider && (
-                          <FlashAutoIcon
-                            sx={{
-                              color: 'orange',
-                              margin: '0 0 0 4px',
-                              width: '16px',
-                              height: '16px',
-                            }}
-                          />
+                          <FlashAutoIcon sx={flashIconStyle} />
                         )}
                     </Typography>
-                    <Typography
-                      sx={{
-                        fontWeight: 400,
-                        fontSize: '12px',
-                        marginBottom: '0px',
-                      }}
-                      variant='caption'
-                    >
+                    <Typography sx={coreTextStyle} variant='caption'>
                       {`${targetRow.vcpu} core${
                         targetRow.vcpu !== 1 ? 's' : ''
                       }`}
                     </Typography>
                   </Grid>
                   <Grid item xs={3}>
-                    <Typography
-                      sx={{
-                        fontStyle: 'normal',
-                        color: '#4DB296',
-                        fontWeight: 500,
-                        fontSize: '16px',
-                        textAlign: 'right',
-                      }}
-                    >
+                    <Typography sx={itemRunsStyle}>
                       {benchmarkChecked &&
                       watch('benchmarkHardware') === targetRow.provider
                         ? runsPerTrial * numTrials
@@ -102,12 +77,7 @@ const OctomizePanel = ({
       </>
       <Button
         name={'octomize'}
-        sx={{
-          width: '100%',
-          height: '48px',
-          borderRadius: '8px',
-          textTransform: 'none',
-        }}
+        sx={submitButtonStyle}
         type='submit'
         disabled={!isOctomizeDisabled}
         variant='contained'

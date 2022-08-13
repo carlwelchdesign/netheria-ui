@@ -181,3 +181,56 @@ export const UserAvatar = styled(Avatar)(() => ({
   bottom: '14px',
   left: '11px',
 }))
+
+export const submitButtonStyle = {
+  width: '100%',
+  height: '48px',
+  borderRadius: '8px',
+  textTransform: 'none',
+}
+
+export const itemRunsStyle = {
+  fontStyle: 'normal',
+  color: '#4DB296',
+  fontWeight: 500,
+  fontSize: '16px',
+  textAlign: 'right',
+}
+
+export const flashIconStyle = {
+  color: 'orange',
+  margin: '0 0 0 4px',
+  width: '16px',
+  height: '16px',
+}
+
+export const coreTextStyle = {
+  fontWeight: 400,
+  fontSize: '12px',
+  marginBottom: '0px',
+}
+
+export const instanceTextStyle = {
+  fontWeight: 600,
+  fontSize: '16px',
+  marginBottom: '0px',
+  display: 'inline',
+}
+
+export const panelStyle = {
+  borderRadius: '8px',
+  padding: '24px',
+  position: 'relative',
+}
+
+export const totalRunsTextStyle = { marginBottom: '0px', textAlign: 'right' }
+
+export const gridContainerStyle = { marginBottom: '14px' }
+
+export const boxContainerStyle = { display: 'flex' }
+
+export const flexStyle = { display: 'flex' }
+export const mainPanelStyle = { borderRadius: '8px', marginBottom: '64px' }
+export const accorianContainerStyle = { padding: '24px 24px 10px' }
+export const hardwareTargetTableHeadingStyle = { paddingLeft: '0 !important' }
+export const hardwareTargetTextStyle = { marginTop: '60px', color: grey[500] }
