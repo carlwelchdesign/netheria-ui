@@ -1,6 +1,6 @@
 import { Paper, Typography, Box, Grid, Button } from '@mui/material'
 import React from 'react'
-import { OctomizePanelProps, TargetTableTypes } from '../../constants/types'
+import { OctomizePanelProps } from '../../constants/types'
 import {
   boxContainerStyle,
   coreTextStyle,

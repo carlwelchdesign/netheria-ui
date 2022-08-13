@@ -6,6 +6,7 @@ import {
   TargetTableTypes,
   OctomizeDataTypes,
   OctomizePanelProps,
+  AccordianProps,
 } from '../../constants/types'
 import { FieldValues, useForm } from 'react-hook-form'
 import TargetTable from '../TargetTable'
@@ -145,7 +146,7 @@ const App = () => {
     setMessageModal(true)
   }
 
-  const accordianData = getAccordianForms({
+  const accordianData: AccordianProps[] = getAccordianForms({
     setBenchmarkChecked,
     setAccelerateChecked,
     benchmarkChecked,
@@ -154,7 +155,7 @@ const App = () => {
     watch,
   })
 
-  const accordianForm = <AccordianForm data={accordianData} />
+  const accordianForm: JSX.Element = <AccordianForm data={accordianData} />
 
   const modelTitleDetails: JSX.Element = (
     <ModelTitleDetails
