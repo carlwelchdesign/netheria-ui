@@ -141,28 +141,43 @@ const App = () => {
     setMessageModal(true)
   }
 
+  const accordianData = getAccordianForms({
+    setBenchmarkChecked,
+    setAccelerateChecked,
+    benchmarkChecked,
+    accelerateChecked,
+    register,
+    watch,
+  })
+
+  const modelDetailProps = {
+    title: 'Shufflenet-v2.onnx',
+    details: 'Created three days ago by Mike Johnson',
+  }
+
+  const octomizePanelProps = {
+    totalRuns,
+    targetRowData,
+    benchmarkChecked,
+    runsPerTrial,
+    numTrials,
+    isOctomizeDisabled: isOctomizeDisabled(),
+    watch,
+    isAccelerateComplete: isAccelerateComplete,
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <MainGrid
           modelTitleDetails={
             <ModelTitleDetails
-              {...{
-                title: 'Shufflenet-v2.onnx',
-                details: 'Created three days ago by Mike Johnson',
-              }}
+              {...modelDetailProps}
             />
           }
           accordianForm={
             <AccordianForm
-              data={getAccordianForms({
-                setBenchmarkChecked,
-                setAccelerateChecked,
-                benchmarkChecked,
-                accelerateChecked,
-                register,
-                watch,
-              })}
+              data={accordianData}
             />
           }
           addRowButton={
@@ -194,16 +209,7 @@ const App = () => {
           }
           octomizePanel={
             <OctomizePanel
-              {...{
-                totalRuns,
-                targetRowData,
-                benchmarkChecked,
-                runsPerTrial,
-                numTrials,
-                isOctomizeDisabled: isOctomizeDisabled(),
-                watch,
-                isAccelerateComplete: isAccelerateComplete,
-              }}
+              {...octomizePanelProps}
             />
           }
         />
