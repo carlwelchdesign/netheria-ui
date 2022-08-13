@@ -15,7 +15,7 @@ type Props = {
   modelTitleDetails: JSX.Element
   accordianForm: JSX.Element
   duplicateAlert: JSX.Element
-  targetTable: JSX.Element
+  targetTableForm: JSX.Element
   octomizePanel: JSX.Element
 }
 
@@ -24,7 +24,7 @@ const MainGrid = ({
   accordianForm,
   addRowButton,
   duplicateAlert,
-  targetTable,
+  targetTableForm,
   octomizePanel,
 }: Props) => (
   <Box sx={flexStyle}>
@@ -53,7 +53,7 @@ const MainGrid = ({
               </Grid>
             </Box>
             {duplicateAlert}
-            {targetTable}
+            {targetTableForm}
           </Paper>
         </Grid>
         <Grid item xs={3}>

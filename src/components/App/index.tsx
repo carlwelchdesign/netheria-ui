@@ -188,7 +188,7 @@ const App = () => {
     </>
   )
 
-  const targetTable: JSX.Element = (
+  const targetTableForm: JSX.Element = (
     <TargetTable
       rowsData={targetRowData}
       deleteTableRow={deleteTableRow}
@@ -196,7 +196,7 @@ const App = () => {
     />
   )
 
-  const octomizePanelProps: OctomizePanelProps = {
+  const octomizePanelData: OctomizePanelProps = {
     totalRuns,
     targetRowData,
     benchmarkChecked,
@@ -207,7 +207,7 @@ const App = () => {
     isAccelerateComplete: isAccelerateComplete,
   }
 
-  const octomizePanel: JSX.Element = <OctomizePanel {...octomizePanelProps} />
+  const octomizePanel: JSX.Element = <OctomizePanel {...octomizePanelData} />
 
   return (
     <>
@@ -217,7 +217,7 @@ const App = () => {
           accordianForm={accordianForm}
           addRowButton={addRowButton}
           duplicateAlert={duplicateAlert}
-          targetTable={targetTable}
+          targetTableForm={targetTableForm}
           octomizePanel={octomizePanel}
         />
       </form>
