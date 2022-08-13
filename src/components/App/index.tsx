@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import { Alert, Button, Container, Grid, Paper } from '@mui/material'
@@ -60,7 +60,7 @@ const App = () => {
     octomizeFormData && console.log({ octomizeFormData })
   }, [octomizeFormData])
 
-  const isOctomizeDisabled = () => {
+  const isOctomizeDisabled = useCallback(() => {
     if ((isBenchMarkComplete || isAccelerateComplete) && dataLength) {
       if (isBenchMarkComplete && isAccelerateComplete) {
         return true
@@ -71,7 +71,7 @@ const App = () => {
       }
     }
     return false
-  }
+  }, [isBenchMarkComplete, isAccelerateComplete, dataLength])
 
   const addTableRows = () => {
     setTargetRowData([...targetRowData, rowsInputDefault])
@@ -87,16 +87,16 @@ const App = () => {
     }
   }
 
-  const getCpuMemory = (value: string) => {
+  const getCpuMemory = useCallback((value: string) => {
     const instance = instances.filter((instance) => instance.name === value)[0]
     const { cpu, memory } = instance
     return {
       vcpu: cpu,
       memory,
     }
-  }
+  }, [])
 
-  const handleChange = (
+  const handleTargetTableChange = (
     index: number,
     e: { target: { name: string; value: string } },
   ) => {
@@ -217,7 +217,7 @@ const App = () => {
                   <TargetTable
                     rowsData={targetRowData}
                     deleteTableRow={deleteTableRow}
-                    handleChange={handleChange}
+                    handleChange={handleTargetTableChange}
                   />
                 </Paper>
               </Grid>
