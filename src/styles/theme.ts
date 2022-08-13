@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles'
 import { styled, Typography, Avatar } from '@mui/material'
-import { grey, blue } from '@mui/material/colors'
+import { grey } from '@mui/material/colors'
 import MuiDrawer from '@mui/material/Drawer'
 
 export const theme = createTheme({
