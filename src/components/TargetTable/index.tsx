@@ -29,16 +29,15 @@ type Props = {
   ) => void
 }
 
+const tableStyle = { boxShadow: 'none', borderBottom: 'none' }
+
 export const TableCellHeader = styled(TableCell)(() => ({
   paddingBottom: '10px',
 }))
 
 const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
   return (
-    <TableContainer
-      component={Paper}
-      sx={{ boxShadow: 'none', borderBottom: 'none' }}
-    >
+    <TableContainer component={Paper} sx={tableStyle}>
       <Table aria-label='hardware-target-table'>
         <TableHead>
           <TableRow>
@@ -60,87 +59,84 @@ const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rowsData.map((data: TargetTableTypes, index: number) => (
-            <TableRow key={index}>
-              <TableCell sx={{ boxShadow: 'none', borderBottom: 'none' }}>
-                <Select
-                  sx={{ minWidth: '100%' }}
-                  name={'provider'}
-                  displayEmpty
-                  renderValue={(selected) => {
-                    if (selected.length === 0) {
-                      return 'Select Provider'
-                    }
-                    return selected
-                  }}
-                  inputProps={{ 'aria-label': 'Without label' }}
-                  onChange={(e) => {
-                    data.provider = ''
-                    return handleChange(index, e)
-                  }}
-                  value={data.provider}
-                  placeholder='Placeholder'
-                  defaultValue={''}
-                >
-                  {Object.keys(Providers).map((key) => (
-                    <MenuItem key={key} value={key}>
-                      {key}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </TableCell>
-              <TableCell sx={{ boxShadow: 'none', borderBottom: 'none' }}>
-                <Select
-                  sx={{ minWidth: '100%' }}
-                  name={'instance'}
-                  displayEmpty
-                  renderValue={(selected) => {
-                    if (selected.length === 0) {
-                      return 'Select Instance'
-                    }
-                    return selected
-                  }}
-                  disabled={!data.provider}
-                  inputProps={{ 'aria-label': 'Without label' }}
-                  onChange={(e) => handleChange(index, e)}
-                  value={data.instance}
-                  defaultValue={''}
-                >
-                  {instances
-                    .filter((instance) => instance.provider === data.provider)
-                    .map((instance) => (
-                      <MenuItem key={instance.name} value={instance.name}>
-                        {instance.name}
+          {rowsData.map((data: TargetTableTypes, index: number) => {
+            const dataStyle = {
+              color: `${data.instance ? grey[600] : grey[400]}`,
+            }
+            return (
+              <TableRow key={index}>
+                <TableCell sx={tableStyle}>
+                  <Select
+                    sx={{ minWidth: '100%' }}
+                    name={'provider'}
+                    displayEmpty
+                    renderValue={(selected) => {
+                      if (selected.length === 0) {
+                        return 'Select Provider'
+                      }
+                      return selected
+                    }}
+                    inputProps={{ 'aria-label': 'Without label' }}
+                    onChange={(e) => {
+                      data.provider = ''
+                      return handleChange(index, e)
+                    }}
+                    value={data.provider}
+                    placeholder='Placeholder'
+                    defaultValue={''}
+                  >
+                    {Object.keys(Providers).map((key) => (
+                      <MenuItem key={key} value={key}>
+                        {key}
                       </MenuItem>
                     ))}
-                </Select>
-              </TableCell>
-              <TableCell sx={{ boxShadow: 'none', borderBottom: 'none' }}>
-                <Typography
-                  sx={{ color: `${data.instance ? grey[600] : grey[400]}` }}
-                >
-                  {data.vcpu}
-                </Typography>
-              </TableCell>
-              <TableCell sx={{ boxShadow: 'none', borderBottom: 'none' }}>
-                <Typography
-                  sx={{ color: `${data.instance ? grey[600] : grey[400]}` }}
-                >
-                  {data.memory}
-                </Typography>
-              </TableCell>
-              <TableCell sx={{ boxShadow: 'none', borderBottom: 'none' }}>
-                {data.instance && (
-                  <IconButton
-                    disabled={rowsData.length === 0}
-                    onClick={() => deleteTableRow(index)}
+                  </Select>
+                </TableCell>
+                <TableCell sx={tableStyle}>
+                  <Select
+                    sx={{ minWidth: '100%' }}
+                    name={'instance'}
+                    displayEmpty
+                    renderValue={(selected) => {
+                      if (selected.length === 0) {
+                        return 'Select Instance'
+                      }
+                      return selected
+                    }}
+                    disabled={!data.provider}
+                    inputProps={{ 'aria-label': 'Without label' }}
+                    onChange={(e) => handleChange(index, e)}
+                    value={data.instance}
+                    defaultValue={''}
                   >
-                    <ClearIcon />
-                  </IconButton>
-                )}
-              </TableCell>
-            </TableRow>
-          ))}
+                    {instances
+                      .filter((instance) => instance.provider === data.provider)
+                      .map((instance) => (
+                        <MenuItem key={instance.name} value={instance.name}>
+                          {instance.name}
+                        </MenuItem>
+                      ))}
+                  </Select>
+                </TableCell>
+                <TableCell sx={tableStyle}>
+                  <Typography sx={dataStyle}>{data.vcpu}</Typography>
+                </TableCell>
+                <TableCell sx={tableStyle}>
+                  <Typography sx={dataStyle}>{data.memory}</Typography>
+                </TableCell>
+                <TableCell sx={tableStyle}>
+                  {data.instance && (
+                    <IconButton
+                      disabled={rowsData.length === 0}
+                      onClick={() => deleteTableRow(index)}
+                    >
+                      <ClearIcon />
+                    </IconButton>
+                  )}
+                </TableCell>
+              </TableRow>
+            )
+          })}
         </TableBody>
       </Table>
     </TableContainer>
