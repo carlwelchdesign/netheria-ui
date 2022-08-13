@@ -35,7 +35,7 @@ export const TableCellHeader = styled(TableCell)(() => ({
   paddingBottom: '10px',
 }))
 
-const tableHeadTextColor = {  color: grey[500] }
+const tableHeadTextColor = { color: grey[500] }
 
 const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
   return (
@@ -44,7 +44,7 @@ const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
         <TableHead>
           <TableRow>
             <TableCellHeader width='35%'>
-              <TableHeadText sx={{  color: blue[500] }}>PROVIDER</TableHeadText>
+              <TableHeadText sx={{ color: blue[500] }}>PROVIDER</TableHeadText>
             </TableCellHeader>
             <TableCellHeader width='35%'>
               <TableHeadText sx={tableHeadTextColor}>INSTANCE</TableHeadText>
@@ -53,7 +53,9 @@ const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
               <TableHeadText sx={tableHeadTextColor}>VCPU</TableHeadText>
             </TableCellHeader>
             <TableCellHeader width='15%'>
-              <TableHeadText sx={tableHeadTextColor}>MEMORY (GIB)</TableHeadText>
+              <TableHeadText sx={tableHeadTextColor}>
+                MEMORY (GIB)
+              </TableHeadText>
             </TableCellHeader>
             <TableCellHeader width='15%'>
               <TableHeadText></TableHeadText>
