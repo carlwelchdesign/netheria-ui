@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Alert, Button } from '@mui/material'
+import { Alert, Box, Button, Container } from '@mui/material'
 import ModelTitleDetails from '../ModelTitleDetails'
 import AccordianForm from '../AccordianForm'
 import {
@@ -14,8 +14,9 @@ import { instances, rowsInputDefault, getAccordianForms } from '../../constants'
 import MessageModal from '../MessageModal'
 import OctomizePanel from '../OctomizePanel'
 import { checkForDuplicates } from '../../utils'
-import MainGrid from '../MainGrid'
-import { addButtonStyle } from '../../styles/theme'
+import PageLayout from '../PageLayout'
+import { addButtonStyle, flexStyle } from '../../styles/theme'
+import SideNav from '../SideNav'
 
 const App = () => {
   const { register, handleSubmit, watch } = useForm()
@@ -210,23 +211,26 @@ const App = () => {
   const octomizePanel: JSX.Element = <OctomizePanel {...octomizePanelData} />
 
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <MainGrid
-          modelTitleDetails={modelTitleDetails}
-          accordianForm={accordianForm}
-          addRowButton={addRowButton}
-          duplicateAlert={duplicateAlert}
-          targetTableForm={targetTableForm}
-          octomizePanel={octomizePanel}
+    <Box sx={flexStyle}>
+      <SideNav />
+      <Container>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <PageLayout
+            modelTitleDetails={modelTitleDetails}
+            accordianForm={accordianForm}
+            addRowButton={addRowButton}
+            duplicateAlert={duplicateAlert}
+            targetTableForm={targetTableForm}
+            octomizePanel={octomizePanel}
+          />
+        </form>
+        <MessageModal
+          openModal={openMessageModal}
+          setOpenModal={setMessageModal}
+          message={modalMessage}
         />
-      </form>
-      <MessageModal
-        openModal={openMessageModal}
-        setOpenModal={setMessageModal}
-        message={modalMessage}
-      />
-    </>
+      </Container>
+    </Box>
   )
 }
 
