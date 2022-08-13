@@ -132,7 +132,6 @@ export const theme = createTheme({
 
 export const TableHeadText = styled(Typography)(() => ({
   fontSize: '10px',
-  color: blue[500],
   fontWeight: 500,
 }))
 

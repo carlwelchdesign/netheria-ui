@@ -17,7 +17,7 @@ import {
 import { instances } from '../../constants'
 import { Providers, TargetTableTypes } from '../../constants/types'
 import ClearIcon from '@mui/icons-material/Clear'
-import { grey } from '@mui/material/colors'
+import { blue, grey } from '@mui/material/colors'
 import { TableHeadText } from '../../styles/theme'
 
 type Props = {
@@ -35,6 +35,8 @@ export const TableCellHeader = styled(TableCell)(() => ({
   paddingBottom: '10px',
 }))
 
+const tableHeadTextColor = {  color: grey[500] }
+
 const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
   return (
     <TableContainer component={Paper} sx={tableStyle}>
@@ -42,16 +44,16 @@ const TargetTable = ({ rowsData, deleteTableRow, handleChange }: Props) => {
         <TableHead>
           <TableRow>
             <TableCellHeader width='35%'>
-              <TableHeadText>PROVIDER</TableHeadText>
+              <TableHeadText sx={{  color: blue[500] }}>PROVIDER</TableHeadText>
             </TableCellHeader>
             <TableCellHeader width='35%'>
-              <TableHeadText>INSTANCE</TableHeadText>
+              <TableHeadText sx={tableHeadTextColor}>INSTANCE</TableHeadText>
             </TableCellHeader>
             <TableCellHeader width='15%'>
-              <TableHeadText>VCPU</TableHeadText>
+              <TableHeadText sx={tableHeadTextColor}>VCPU</TableHeadText>
             </TableCellHeader>
             <TableCellHeader width='15%'>
-              <TableHeadText>MEMORY (GIB)</TableHeadText>
+              <TableHeadText sx={tableHeadTextColor}>MEMORY (GIB)</TableHeadText>
             </TableCellHeader>
             <TableCellHeader width='15%'>
               <TableHeadText></TableHeadText>
