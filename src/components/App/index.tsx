@@ -150,10 +150,14 @@ const App = () => {
     watch,
   })
 
-  const modelDetailProps = {
-    title: 'Shufflenet-v2.onnx',
-    details: 'Created three days ago by Mike Johnson',
-  }
+  const modelTitleDetails = (
+    <ModelTitleDetails
+      {...{
+        title: 'Shufflenet-v2.onnx',
+        details: 'Created three days ago by Mike Johnson',
+      }}
+    />
+  )
 
   const octomizePanelProps = {
     totalRuns,
@@ -196,16 +200,18 @@ const App = () => {
     />
   )
 
+  const octomizePanel = <OctomizePanel {...octomizePanelProps} />
+
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <MainGrid
-          modelTitleDetails={<ModelTitleDetails {...modelDetailProps} />}
+          modelTitleDetails={modelTitleDetails}
           accordianForm={<AccordianForm data={accordianData} />}
           addRowButton={addRowButton}
           duplicateAlert={duplicateAlert}
           targetTable={targetTable}
-          octomizePanel={<OctomizePanel {...octomizePanelProps} />}
+          octomizePanel={octomizePanel}
         />
       </form>
       <MessageModal
