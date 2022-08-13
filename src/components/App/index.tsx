@@ -14,6 +14,7 @@ import {
   hardwareTargetTableHeadingStyle,
   hardwareTargetTextStyle,
   mainPanelStyle,
+  octomizeTitleTextStyle,
 } from '../../styles/theme'
 import { FieldValues, useForm } from 'react-hook-form'
 import TargetTable from '../TargetTable'
@@ -169,10 +170,7 @@ const App = () => {
               <Grid item xs={9}>
                 <Paper sx={mainPanelStyle} elevation={6}>
                   <Box sx={accorianContainerStyle}>
-                    <Typography
-                      sx={{ color: grey[500], marginBottom: '22px' }}
-                      variant='h3'
-                    >
+                    <Typography sx={octomizeTitleTextStyle} variant='h3'>
                       Octomize
                     </Typography>
                     <AccordianForm

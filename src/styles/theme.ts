@@ -234,3 +234,4 @@ export const mainPanelStyle = { borderRadius: '8px', marginBottom: '64px' }
 export const accorianContainerStyle = { padding: '24px 24px 10px' }
 export const hardwareTargetTableHeadingStyle = { paddingLeft: '0 !important' }
 export const hardwareTargetTextStyle = { marginTop: '60px', color: grey[500] }
+export const octomizeTitleTextStyle = { color: grey[500], marginBottom: '22px' }
