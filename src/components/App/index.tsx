@@ -170,16 +170,8 @@ const App = () => {
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <MainGrid
-          modelTitleDetails={
-            <ModelTitleDetails
-              {...modelDetailProps}
-            />
-          }
-          accordianForm={
-            <AccordianForm
-              data={accordianData}
-            />
-          }
+          modelTitleDetails={<ModelTitleDetails {...modelDetailProps} />}
+          accordianForm={<AccordianForm data={accordianData} />}
           addRowButton={
             <Button
               name={'add-target'}
@@ -207,11 +199,7 @@ const App = () => {
               handleChange={handleHardwareTargetChange}
             />
           }
-          octomizePanel={
-            <OctomizePanel
-              {...octomizePanelProps}
-            />
-          }
+          octomizePanel={<OctomizePanel {...octomizePanelProps} />}
         />
       </form>
       <MessageModal
