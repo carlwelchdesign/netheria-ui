@@ -62,4 +62,4 @@ const PageLayout = ({
   </form>
 )
 
-export default PageLayout
+export default React.memo(PageLayout)
