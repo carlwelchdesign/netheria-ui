@@ -5,7 +5,7 @@ User can create hardware targets. Duplicates are not allowed. Octomize feedback 
 
 ![ezgif-5-d3b3657586](https://user-images.githubusercontent.com/2073707/184517761-193e8273-6ece-46e6-8333-0f01a798e97d.gif)
 
-And users can delete rows.
+User can delete rows.
 
 ![deleteRows](https://user-images.githubusercontent.com/2073707/184523447-ce70ad69-d20c-417e-9cfa-255eff4e3a47.gif)
 
