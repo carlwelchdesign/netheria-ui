@@ -215,13 +215,13 @@ const App = () => {
       <SideNav />
       <Container>
         <FormLayout
-          onSubmit={handleSubmit(onSubmit)}
           modelTitleDetails={modelTitleDetails}
           accordianForm={accordianForm}
           addRowButton={addRowButton}
           duplicateAlert={duplicateAlert}
           targetTableForm={targetTableForm}
           octomizePanel={octomizePanel}
+          onSubmit={handleSubmit(onSubmit)}
         />
         <MessageModal
           openModal={openMessageModal}
