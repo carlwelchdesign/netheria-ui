@@ -19,7 +19,7 @@ type Props = {
   onSubmit: () => void
 }
 
-const PageLayout = ({
+const FormLayout = ({
   onSubmit,
   modelTitleDetails,
   accordianForm,
@@ -62,4 +62,4 @@ const PageLayout = ({
   </form>
 )
 
-export default React.memo(PageLayout)
+export default React.memo(FormLayout)

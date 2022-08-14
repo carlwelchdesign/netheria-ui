@@ -14,7 +14,7 @@ import { instances, rowsInputDefault, getAccordianForms } from '../../constants'
 import MessageModal from '../MessageModal'
 import OctomizePanel from '../OctomizePanel'
 import { checkForDuplicates } from '../../utils'
-import PageLayout from '../PageLayout'
+import FormLayout from '../FormLayout'
 import { addButtonStyle, flexStyle } from '../../styles/theme'
 import SideNav from '../SideNav'
 
@@ -214,7 +214,7 @@ const App = () => {
     <Box sx={flexStyle}>
       <SideNav />
       <Container>
-        <PageLayout
+        <FormLayout
           onSubmit={handleSubmit(onSubmit)}
           modelTitleDetails={modelTitleDetails}
           accordianForm={accordianForm}
