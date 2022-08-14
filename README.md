@@ -1,7 +1,7 @@
 # Netheria UI
 ## Hardware Targets
 
-User can create hardware targets. Duplicates are not allowed. Octomize feedback panel is updated accordingly.
+User can create hardware targets. Duplicates are not allowed. Octomize feedback panel updates accordingly.
 
 ![ezgif-5-d3b3657586](https://user-images.githubusercontent.com/2073707/184517761-193e8273-6ece-46e6-8333-0f01a798e97d.gif)
 
