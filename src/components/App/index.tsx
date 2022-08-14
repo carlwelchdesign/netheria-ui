@@ -214,16 +214,15 @@ const App = () => {
     <Box sx={flexStyle}>
       <SideNav />
       <Container>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <PageLayout
-            modelTitleDetails={modelTitleDetails}
-            accordianForm={accordianForm}
-            addRowButton={addRowButton}
-            duplicateAlert={duplicateAlert}
-            targetTableForm={targetTableForm}
-            octomizePanel={octomizePanel}
-          />
-        </form>
+        <PageLayout
+          onSubmit={handleSubmit(onSubmit)}
+          modelTitleDetails={modelTitleDetails}
+          accordianForm={accordianForm}
+          addRowButton={addRowButton}
+          duplicateAlert={duplicateAlert}
+          targetTableForm={targetTableForm}
+          octomizePanel={octomizePanel}
+        />
         <MessageModal
           openModal={openMessageModal}
           setOpenModal={setMessageModal}

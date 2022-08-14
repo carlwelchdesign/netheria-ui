@@ -16,9 +16,11 @@ type Props = {
   duplicateAlert: JSX.Element
   targetTableForm: JSX.Element
   octomizePanel: JSX.Element
+  onSubmit: () => void
 }
 
 const PageLayout = ({
+  onSubmit,
   modelTitleDetails,
   accordianForm,
   addRowButton,
@@ -26,36 +28,38 @@ const PageLayout = ({
   targetTableForm,
   octomizePanel,
 }: Props) => (
-  <Grid container spacing={2}>
-    <Grid item xs={12}>
-      {modelTitleDetails}
-    </Grid>
-    <Grid item xs={9}>
-      <Paper sx={mainPanelStyle} elevation={6}>
-        <Box sx={accorianContainerStyle}>
-          <Typography sx={octomizeTitleTextStyle} variant='h3'>
-            Octomize
-          </Typography>
-          {accordianForm}
-          <Grid container spacing={0}>
-            <Grid item xs={11} sx={hardwareTargetTableHeadingStyle}>
-              <Typography sx={hardwareTargetTextStyle} variant='body1'>
-                Hardware targets
-              </Typography>
+  <form onSubmit={onSubmit}>
+    <Grid container spacing={2}>
+      <Grid item xs={12}>
+        {modelTitleDetails}
+      </Grid>
+      <Grid item xs={9}>
+        <Paper sx={mainPanelStyle} elevation={6}>
+          <Box sx={accorianContainerStyle}>
+            <Typography sx={octomizeTitleTextStyle} variant='h3'>
+              Octomize
+            </Typography>
+            {accordianForm}
+            <Grid container spacing={0}>
+              <Grid item xs={11} sx={hardwareTargetTableHeadingStyle}>
+                <Typography sx={hardwareTargetTextStyle} variant='body1'>
+                  Hardware targets
+                </Typography>
+              </Grid>
+              <Grid item xs={1} sx={flexStyle}>
+                {addRowButton}
+              </Grid>
             </Grid>
-            <Grid item xs={1} sx={flexStyle}>
-              {addRowButton}
-            </Grid>
-          </Grid>
-        </Box>
-        {duplicateAlert}
-        {targetTableForm}
-      </Paper>
+          </Box>
+          {duplicateAlert}
+          {targetTableForm}
+        </Paper>
+      </Grid>
+      <Grid item xs={3}>
+        {octomizePanel}
+      </Grid>
     </Grid>
-    <Grid item xs={3}>
-      {octomizePanel}
-    </Grid>
-  </Grid>
+  </form>
 )
 
 export default PageLayout
