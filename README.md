@@ -3,7 +3,7 @@
 
 User can create hardware targets. Duplicates are not allowed. Octomize feedback panel is updated accordingly.
 
-![newTargetTable](https://user-images.githubusercontent.com/2073707/184517473-e4bc6d69-e77a-4c02-a52f-6a7db9fd82f9.gif)
+![Aug-13-2022 17-22-25](https://user-images.githubusercontent.com/2073707/184517607-46ffaa0c-6c30-4465-a658-969f0f67347d.gif)
 
 
 
